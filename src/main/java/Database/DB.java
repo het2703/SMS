@@ -8,7 +8,6 @@ public class DB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/byte_me","root","1234");
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
