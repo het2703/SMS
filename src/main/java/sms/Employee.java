@@ -1,6 +1,5 @@
 package sms;
 import Database.DB;
-
 import java.sql.Date;
 import java.sql.SQLException;
 public class Employee {
