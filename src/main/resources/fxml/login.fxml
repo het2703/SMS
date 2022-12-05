@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@../OneDrive/Desktop/New%20folder/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@../OneDrive/Desktop/New%20folder/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.LoginController">
    <left>
       <VBox prefHeight="400.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
    </left>
@@ -38,11 +38,11 @@
                      </font>
                   </Label>
                   <Region prefHeight="13.0" prefWidth="276.0" />
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="126.0" textFill="RED" />
+                  <Label fx:id="loginlabel" alignment="CENTER" prefHeight="26.0" prefWidth="126.0" textFill="RED" />
                   <Region prefHeight="12.0" prefWidth="276.0" />
                   <HBox alignment="CENTER" prefHeight="36.0" prefWidth="310.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #086ed4;" text="Login" textFill="#ececec">
+                        <Button fx:id="loginbuttons1" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #086ed4;" text="Login" textFill="#ececec">
                            <HBox.margin>
                               <Insets right="2.0" />
                            </HBox.margin>
@@ -50,7 +50,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="40.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: cream; -fx-border-color: silver;" text="SignUp" HBox.hgrow="ALWAYS">
+                        <Button fx:id="signupbutton" layoutX="40.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: cream; -fx-border-color: silver;" text="SignUp" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="2.0" />
                            </HBox.margin>
@@ -60,22 +60,22 @@
                      </children>
                   </HBox>
                   <Region prefHeight="18.0" prefWidth="310.0" />
-                  <TextField alignment="CENTER" maxWidth="400.0" prefHeight="10.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="userid" alignment="CENTER" maxWidth="400.0" prefHeight="10.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
                   <Region layoutX="10.0" layoutY="119.0" prefHeight="18.0" prefWidth="310.0" />
-                  <PasswordField alignment="CENTER" maxWidth="400.0" promptText="Password" style="-fx-background-radius: 10;" />
+                  <PasswordField fx:id="password" alignment="CENTER" maxWidth="400.0" promptText="Password" style="-fx-background-radius: 10;" />
                   <Region prefHeight="17.0" prefWidth="276.0" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="3.0" prefWidth="310.0" style="-fx-background-radius: 10;" />
-                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="21.0" prefWidth="276.0" style="-fx-background-color: transparent;" text="Forgot Password?">
+                  <Button fx:id="forgotpass" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#forgotpassbutton" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Forgot Password?">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="9.0" prefWidth="310.0" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
+                  <Button fx:id="loginbuttons2" mnemonicParsing="false" onMouseClicked="#loginnow" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
