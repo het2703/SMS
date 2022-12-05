@@ -12,7 +12,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(new Scene(root, 320, 240));
         stage.show();
-        //pandya lodu hai
     }
 
     public static void main(String[] args) {
