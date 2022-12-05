@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
         stage.setScene(new Scene(root, 320, 240));
         stage.show();
     }
-
+//pandya loda he
     public static void main(String[] args) {
         launch(args);
     }
