@@ -1,7 +1,9 @@
 package sms;
 
 import Database.DAO.Login;
+import javafx.scene.control.PasswordField;
 
+import java.awt.*;
 import java.sql.SQLException;
 
 public class Users {
@@ -20,6 +22,9 @@ public class Users {
         contact=number;
         this.DOB=DOB;
         this.department=department;
+    }
+    public Users(){
+
     }
 
     public String getFname() {
