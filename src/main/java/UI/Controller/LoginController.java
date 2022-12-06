@@ -28,10 +28,10 @@ private Button loginbuttons2;
 @FXML
     private Button signupbutton;
     @FXML
-    private PasswordField password;
+    public PasswordField password;
 
     @FXML
-    private TextField userid;
+    public TextField userid;
     @FXML
     private Label loginlabel;
 
