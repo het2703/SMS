@@ -23,15 +23,15 @@ public class LoginController {
 
     @FXML
     private Button loginbuttons1;
-@FXML
-private Button loginbuttons2;
-@FXML
+    @FXML
+    private Button loginbuttons2;
+    @FXML
     private Button signupbutton;
     @FXML
-    private PasswordField password;
+    public PasswordField password;
 
     @FXML
-    private TextField userid;
+    public TextField userid;
     @FXML
     private Label loginlabel;
 
@@ -47,7 +47,6 @@ private Button loginbuttons2;
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
-
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -66,16 +65,18 @@ private Button loginbuttons2;
     @FXML
     void forgotpassbutton(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource(""));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
         stage.show();
     }
+
+
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());
-        return Users.login( savedValue, password.toString());
+        return Users.login( savedValue, password.getText());
     }
 }
 
