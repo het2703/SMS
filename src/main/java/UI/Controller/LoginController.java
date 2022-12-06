@@ -47,7 +47,6 @@ public class LoginController {
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
-
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -66,7 +65,7 @@ public class LoginController {
     @FXML
     void forgotpassbutton(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource(""));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
@@ -77,7 +76,6 @@ public class LoginController {
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());
-
         return Users.login( savedValue, password.getText());
     }
 }
