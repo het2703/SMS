@@ -72,10 +72,12 @@ private Button loginbuttons2;
         stage.getScene().setRoot(pane);
         stage.show();
     }
+
+
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());
-        return Users.login( savedValue, password.toString());
+        return Users.login( savedValue, password.getText());
     }
 }
 
