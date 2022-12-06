@@ -23,9 +23,9 @@ public class LoginController {
 
     @FXML
     private Button loginbuttons1;
-@FXML
-private Button loginbuttons2;
-@FXML
+    @FXML
+    private Button loginbuttons2;
+    @FXML
     private Button signupbutton;
     @FXML
     public PasswordField password;
