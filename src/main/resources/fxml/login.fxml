@@ -50,7 +50,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="signupbutton" layoutX="40.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="122.0" style=" -fx-border-color: #C0C0C0;" text="SignUp" HBox.hgrow="ALWAYS">
+                        <Button fx:id="signupbutton" layoutX="40.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#signupnow" prefHeight="45.0" prefWidth="122.0" style=" -fx-border-color: #C0C0C0;" text="SignUp" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="2.0" />
                            </HBox.margin>

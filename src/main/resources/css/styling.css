@@ -2,3 +2,6 @@
     -fx-background-image: url("/img/b4.jpg");
     -fx-background-postion: bottom right;
 }
+.sign{
+-fx-background-image: url("/img/b4.jpg");
+}

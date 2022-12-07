@@ -17,10 +17,18 @@ import sms.Users;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.EventObject;
-
+import javafx.scene.control.Label;
 public class SignupController {
+
     @FXML
     private Button login11button;
+
+    @FXML
+    private Button login12;
+
+    @FXML
+    private Label signuplabel;
+
     @FXML
     private TextField newname;
 @FXML
@@ -32,8 +40,9 @@ private RadioButton Cashier;
 
     @FXML
     private TextField newuserid;
+
     @FXML
-    void login11now(MouseEvent event) throws IOException {
+    void loginagain(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -52,14 +61,17 @@ private RadioButton Cashier;
             stage.getScene().setRoot(pane);
             stage.show();
         }
+        else {
+            signuplabel.setText("Select your credential !");
+        }
     }
 
-    @FXML
+
     public boolean checksignup() throws SQLException, ClassNotFoundException {
         int newid = Integer.parseInt(newuserid.getText());
-        String s="";
+       String s="";
         if(Admin.isSelected()){
-            s="ADMIN";
+           s="ADMIN";
         }
         else if (Cashier.isSelected()) {
         s="CASHIER";

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@New%20folder/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="sign" stylesheets="/css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.SignupController">
    <left>
       <VBox prefHeight="400.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
    </left>
@@ -43,7 +43,7 @@
                   <Region prefHeight="7.0" prefWidth="276.0" />
                   <HBox alignment="CENTER" prefHeight="36.0" prefWidth="310.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: cream; -fx-border-color: silver;" text="Login">
+                        <Button fx:id="login11button" mnemonicParsing="false" onMouseClicked="#loginagain" prefHeight="35.0" prefWidth="124.0" text="Login">
                            <HBox.margin>
                               <Insets right="2.0" />
                            </HBox.margin>
@@ -71,25 +71,23 @@
                   <Region prefHeight="11.0" prefWidth="276.0" />
                   <PasswordField alignment="CENTER" layoutX="10.0" layoutY="240.0" maxWidth="400.0" prefHeight="31.0" prefWidth="276.0" promptText="Password" style="-fx-background-radius: 10;" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="15.0" prefWidth="276.0" style="-fx-background-radius: 10;" />
-                  <VBox alignment="CENTER" prefHeight="58.0" prefWidth="276.0">
+                  <HBox alignment="BASELINE_CENTER" prefHeight="21.0" prefWidth="276.0">
                      <children>
-                        <HBox alignment="BASELINE_CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <RadioButton mnemonicParsing="false" text="ADMIN">
-                                 <HBox.margin>
-                                    <Insets right="10.0" />
-                                 </HBox.margin>
-                              </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="USER" />
-                           </children>
-                        </HBox>
+                        <RadioButton mnemonicParsing="false" text="ADMIN">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="USER" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="22.0" prefWidth="276.0">
+                     <children>
+                        <Label fx:id="signuplabel" alignment="CENTER" prefHeight="18.0" prefWidth="148.0" />
                      </children>
                   </VBox>
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="10.0" prefWidth="276.0" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
+                  <Button fx:id="login12" mnemonicParsing="false" onMouseClicked="#validatesignup" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

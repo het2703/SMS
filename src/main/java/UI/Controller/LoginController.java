@@ -21,19 +21,19 @@ public class LoginController {
     @FXML
     private Button forgotpass;
 
-    @FXML
-    private Button loginbuttons1;
-    @FXML
-    private Button loginbuttons2;
-    @FXML
-    private Button signupbutton;
-    @FXML
-    public PasswordField password;
+
 
     @FXML
-    public TextField userid;
-    @FXML
     private Label loginlabel;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField userid;
+
+
+
 
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
@@ -71,6 +71,16 @@ public class LoginController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
+
+@FXML
+void signupnow(MouseEvent event) throws IOException {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getClassLoader().getResource("fxml/signup.fxml"));
+    Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+    BorderPane pane = loader.load();
+    stage.getScene().setRoot(pane);
+    stage.show();
+}
 
 
     @FXML
