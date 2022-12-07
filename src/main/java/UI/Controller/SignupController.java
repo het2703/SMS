@@ -37,7 +37,6 @@ private RadioButton Admin;
 private RadioButton Cashier;
     @FXML
     private PasswordField newpassword;
-
     @FXML
     private TextField newuserid;
 
@@ -65,7 +64,6 @@ private RadioButton Cashier;
             signuplabel.setText("Enter your credential !");
         }
     }
-
 
     public boolean checksignup() throws SQLException, ClassNotFoundException {
         int newid = Integer.parseInt(newuserid.getText());

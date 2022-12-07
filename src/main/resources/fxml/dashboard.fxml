@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="dash" stylesheets="/css/dash.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="dash" stylesheets="/css/dash.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.DashboardController">
    <center>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="415.0" BorderPane.alignment="CENTER">
          <children>
@@ -45,7 +45,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #1f068c; -fx-background-radius: 15;" text="  Profile" textFill="#adbed4" VBox.vgrow="ALWAYS">
+                  <Button fx:id="profilebutton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#openprofile" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #1f068c; -fx-background-radius: 15;" text="  Profile" textFill="#adbed4" VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -53,7 +53,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #1f068c; -fx-background-radius: 15;" text="  LogOut" textFill="#adbed4">
+                  <Button fx:id="logoutdash" alignment="BOTTOM_LEFT" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #1f068c; -fx-background-radius: 15;" text="  LogOut" textFill="#adbed4">
                      <font>
                         <Font size="16.0" />
                      </font>
