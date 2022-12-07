@@ -2,7 +2,7 @@ package sms;
 
 public class Admin extends Users{
 
-    public Admin(String fname, String lname, int id, long number, int DOB) {
-        super(fname, lname, id, number, DOB, "ADMIN");
+    public Admin(String name, int id, long number, int DOB) {
+        super(name, id, number, DOB, "ADMIN");
     }
 }
