@@ -2,9 +2,6 @@ package sms;
 
 import Database.DAO.Login;
 import Database.DB;
-import javafx.scene.control.PasswordField;
-
-import java.awt.*;
 import java.sql.SQLException;
 
 public class Users {
