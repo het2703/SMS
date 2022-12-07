@@ -2,18 +2,15 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
-
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="home" stylesheets="@New%20folder/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
@@ -78,16 +75,12 @@
                      <children>
                         <HBox alignment="BASELINE_CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="ADMIN">
+                              <RadioButton mnemonicParsing="false" text="ADMIN">
                                  <HBox.margin>
-                                    <Insets right="5.0" />
+                                    <Insets right="10.0" />
                                  </HBox.margin>
-                              </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="CASHIER">
-                                 <HBox.margin>
-                                    <Insets left="5.0" />
-                                 </HBox.margin>
-                              </CheckBox>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="USER" />
                            </children>
                         </HBox>
                      </children>
