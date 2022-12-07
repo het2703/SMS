@@ -11,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sms.Users;
-
-import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -20,8 +18,6 @@ public class LoginController {
 
     @FXML
     private Button forgotpass;
-
-
 
     @FXML
     private Label loginlabel;
