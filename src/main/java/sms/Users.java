@@ -15,6 +15,7 @@ public class Users {
     private String department;
     protected String password;
 
+
     public Users(String fname,String lname,int id,long number,int DOB,String department){
         this.fname=fname;
         this.lname=lname;
