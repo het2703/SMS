@@ -61,15 +61,15 @@
                      </children>
                   </HBox>
                   <Region prefHeight="18.0" prefWidth="276.0" />
-                  <TextField alignment="CENTER" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="newuserid" alignment="CENTER" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
                   <Region layoutX="10.0" layoutY="119.0" prefHeight="13.0" prefWidth="276.0" />
-                  <TextField alignment="CENTER" layoutX="10.0" layoutY="176.0" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="Name" style="-fx-background-radius: 10;" />
+                  <TextField fx:id="newname" alignment="CENTER" layoutX="10.0" layoutY="176.0" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="Name" style="-fx-background-radius: 10;" />
                   <Region prefHeight="11.0" prefWidth="276.0" />
-                  <PasswordField alignment="CENTER" layoutX="10.0" layoutY="240.0" maxWidth="400.0" prefHeight="31.0" prefWidth="276.0" promptText="Password" style="-fx-background-radius: 10;" />
+                  <PasswordField fx:id="newpassword" alignment="CENTER" layoutX="10.0" layoutY="240.0" maxWidth="400.0" prefHeight="31.0" prefWidth="276.0" promptText="Password" style="-fx-background-radius: 10;" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="15.0" prefWidth="276.0" style="-fx-background-radius: 10;" />
                   <HBox alignment="BASELINE_CENTER" prefHeight="21.0" prefWidth="276.0">
                      <children>
