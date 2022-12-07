@@ -73,12 +73,12 @@
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="15.0" prefWidth="276.0" style="-fx-background-radius: 10;" />
                   <HBox alignment="BASELINE_CENTER" prefHeight="21.0" prefWidth="276.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="ADMIN">
+                        <RadioButton fx:id="Admin" mnemonicParsing="false" text="ADMIN">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="USER" />
+                        <RadioButton fx:id="Cashier" mnemonicParsing="false" text="USER" />
                      </children>
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="22.0" prefWidth="276.0">

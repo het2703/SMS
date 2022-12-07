@@ -62,7 +62,7 @@ private RadioButton Cashier;
             stage.show();
         }
         else {
-            signuplabel.setText("Select your credential !");
+            signuplabel.setText("Enter your credential !");
         }
     }
 
