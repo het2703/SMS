@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -29,14 +31,11 @@
          <children>
             <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="302.0" prefWidth="276.0" style="-fx-background-radius: 10px;" VBox.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="200.0" text="Byte_Me">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="180.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/LOGO.jpg" />
+                     </image>
+                  </ImageView>
                   <Region prefHeight="13.0" prefWidth="276.0" />
                   <Label fx:id="loginlabel" alignment="CENTER" prefHeight="26.0" prefWidth="126.0" textFill="RED" />
                   <Region prefHeight="12.0" prefWidth="276.0" />
