@@ -54,6 +54,7 @@ public class LoginController {
                 FXMLLoader loader = new FXMLLoader();
                 ProfileController is = loader.getController();
                 is.getid(id);
+
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
                 BorderPane pane = loader.load();
