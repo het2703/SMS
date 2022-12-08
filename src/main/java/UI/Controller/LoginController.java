@@ -41,6 +41,7 @@ public class LoginController {
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
+                int id =Integer.parseInt(userid.getText());
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();

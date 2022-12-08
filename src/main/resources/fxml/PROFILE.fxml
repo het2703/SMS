@@ -70,11 +70,11 @@
                               <Label prefHeight="18.0" prefWidth="74.0" text="ID" GridPane.rowIndex="2" />
                               <Label layoutX="10.0" layoutY="77.0" prefHeight="18.0" prefWidth="129.0" text="DATE OF BIRTH" GridPane.rowIndex="3" />
                               <Label layoutX="10.0" layoutY="107.0" prefHeight="18.0" prefWidth="102.0" text="PHONE NUMBER" GridPane.rowIndex="4" />
-                              <Label prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" />
-                              <Label layoutX="227.0" layoutY="21.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label layoutX="227.0" layoutY="61.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label layoutX="227.0" layoutY="102.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label layoutX="227.0" layoutY="142.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="namelabel" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" />
+                              <Label fx:id="departmentlabel" layoutX="227.0" layoutY="21.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="idlabel" layoutX="227.0" layoutY="61.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="doblabel" layoutX="227.0" layoutY="102.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="phonenumberlabel" layoutX="227.0" layoutY="142.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                            <VBox.margin>
                               <Insets left="15.0" />

@@ -1,9 +1,11 @@
 package UI.Controller;
 
+import UI.Elements.ConfirmBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -30,6 +32,23 @@ public class ProfileController {
     @FXML
     private Button openprofrompass;
 
+    @FXML
+    private Label departmentlabel;
+
+    @FXML
+    private Label doblabel;
+
+    @FXML
+    private Label idlabel;
+    @FXML
+    private Label namelabel;
+
+    @FXML
+    private Label phonenumberlabel;
+
+    void getid(int id){
+        idlabel.setText(String.valueOf(id));
+    }
 @FXML
 private Button byteme1;
 
