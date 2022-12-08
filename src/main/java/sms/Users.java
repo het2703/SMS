@@ -21,6 +21,10 @@ public class Users {
         this.department=department;
     }
 
+    public Users() {
+
+    }
+
     public String getName() {
         return name;
     }

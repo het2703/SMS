@@ -1,5 +1,6 @@
 package UI.Controller;
 
+import Database.DAO.ProfileDAO;
 import UI.Elements.ConfirmBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import sms.Users;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ProfileController {
     @FXML
@@ -39,16 +42,27 @@ public class ProfileController {
     private Label doblabel;
 
     @FXML
-    private Label idlabel;
+    private static Label idlabel;
     @FXML
     private Label namelabel;
 
     @FXML
     private Label phonenumberlabel;
 
-    void getid(int id){
-        idlabel.setText(String.valueOf(id));
-    }
+int id1;
+   public ProfileController(int id) throws SQLException, ClassNotFoundException {
+       this.id1=id;
+       setlabel();
+   }
+   Users u = ProfileDAO.showProfile(id1);
+  void setlabel() {
+      idlabel.setText(String.valueOf(id1));
+      namelabel.setText(u.getName());
+      departmentlabel.setText(u.getDepartment());
+      doblabel.setText(String.valueOf(u.getDate_of_birth()));
+      phonenumberlabel.setText(String.valueOf(u.getContact()));
+  }
+
 @FXML
 private Button byteme1;
 
