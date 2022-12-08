@@ -6,12 +6,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.CustomerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="emp" stylesheets="@../css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.CustomerController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,27 +43,37 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="109.0">
-                     <children>
-                        <Label prefHeight="73.0" prefWidth="97.0" text="BYTE_ME">
-                           <font>
-                              <Font name="Century" size="18.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
-                  <TextField fx:id="searchtext" prefHeight="26.0" prefWidth="190.0" promptText="Search Customer">
+                  <Button fx:id="dashboard1" mnemonicParsing="false" onMouseClicked="#opendashboard" prefHeight="44.0" prefWidth="101.0" text="BYTE_ME">
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/DESIGN.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox prefHeight="66.0" prefWidth="210.0" />
+                  <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/kisspng-computer-icons-web-search-engine-website-download-search-png-simple-5ab0b1e73838d8.9158675315215293192303.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchtext" prefHeight="42.0" prefWidth="185.0" promptText="Search Customer">
                      <HBox.margin>
                         <Insets right="9.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="addcustomerbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addcustomer" prefHeight="28.0" prefWidth="58.0" text="Add">
+                  <Button fx:id="addcustomerbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addcustomer" prefHeight="40.0" prefWidth="54.0" text="Add">
                      <HBox.margin>
                         <Insets left="9.0" />
                      </HBox.margin>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets bottom="7.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>
@@ -69,11 +81,20 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="dashboard1" mnemonicParsing="false" onMouseClicked="#opendashboard" prefHeight="26.0" prefWidth="90.0" text="Dashboard" />
-            <Button fx:id="logout2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="26.0" prefWidth="69.0" text="Log Out">
+            <Button fx:id="logout2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="43.0" prefWidth="87.0">
                <VBox.margin>
                   <Insets top="250.0" />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logout_icon-icons.com_51025.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
             </Button>
          </children>
       </VBox>
