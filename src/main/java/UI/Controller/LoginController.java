@@ -44,7 +44,7 @@ public class LoginController {
             boolean b =checklogin();
             if(b){
                 int id =Integer.parseInt(userid.getText());
-               ProfileController.getid(id);
+                ProfileController.getid(id);
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();

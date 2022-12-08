@@ -10,11 +10,10 @@ import java.sql.SQLException;
 public class ProfileDAO {
     public static Users showProfile (int uid) throws SQLException, ClassNotFoundException {
         String id = String.valueOf(uid);
-        String query = "select * from users where user_id Regexp '^"+id+"'";
+        String query = "select * from users where id = "+id;
         ResultSet data = DB.dbExecuteQuery(query);
-        assert data != null;
-        int size = data.getRow();
         Users user = new Users();
+        assert data != null;
         dataToArray(data,user);
         return user;
     }
@@ -26,7 +25,7 @@ public class ProfileDAO {
             long contact = data.getInt("NUMBER");
             Date DOB = data.getDate("DOB");
             String department = data.getString("DEPARTMENT");
-            user = new Users(u_id,u_name,contact,DOB,department);
+            user = new Users(u_id, u_name, contact, DOB, department);
 
         }
     }
