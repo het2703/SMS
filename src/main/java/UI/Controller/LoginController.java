@@ -29,8 +29,6 @@ public class LoginController {
     private TextField userid;
 
 
-
-
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         if (userid.getText().isBlank() && password.getText().isBlank()) {
@@ -77,8 +75,6 @@ void signupnow(MouseEvent event) throws IOException {
     stage.getScene().setRoot(pane);
     stage.show();
 }
-
-
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());

@@ -10,31 +10,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ProfileController {
-    @FXML
-    private Button changepass;
-    @FXML
-    private Button logoutfromeditpro;
-    @FXML
-    private Button editprofile;
-    @FXML
-    private Button changepassidinedit;
-    @FXML
-    private Button logoutfromprofile;
+public class EditProfileController {
 
     @FXML
-    private Button openpro;
-    @FXML
-    private Button opendit_pro;
+    private Button byteme3;
 
     @FXML
-    private Button openprofrompass;
-
-@FXML
-private Button byteme1;
-
-    @FXML
-    void opendashboard_fromprofile(MouseEvent event) throws IOException {
+    void opendash_fromeditpro(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -42,9 +24,8 @@ private Button byteme1;
         stage.getScene().setRoot(pane);
         stage.show();
     }
-
     @FXML
-    void changepasspage(MouseEvent event) throws IOException {
+    void changepassinedit(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE PASSWORD.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -54,17 +35,16 @@ private Button byteme1;
     }
 
     @FXML
-    void editprofilepage(MouseEvent event) throws IOException {
+    void openprofilefrommedit(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE EDIT.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
         stage.show();
     }
-
     @FXML
-    void logout_from_profile(MouseEvent event) throws IOException {
+    void logout_from_editpro(MouseEvent event) throws IOException {
         boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout");
         if (b) {
             FXMLLoader loader = new FXMLLoader();
@@ -75,10 +55,4 @@ private Button byteme1;
             stage.show();
         }
     }
-
-
-
-
-
-
-    }
+}
