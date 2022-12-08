@@ -1,7 +1,6 @@
 package Database.DAO;
 
 import Database.DB;
-import sms.Employee;
 import sms.Products;
 
 import java.sql.ResultSet;

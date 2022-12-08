@@ -3,16 +3,17 @@ package sms;
 import Database.DAO.Login;
 import Database.DB;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class Users {
     protected String name;
     protected long staff_id;
     protected long contact;
-    protected int DOB;
+    protected Date DOB;
     private String department;
     protected String password;
 
-    public Users(String name,int id,long number,int DOB,String department){
+    public Users(int id, String name, long number, Date DOB, String department){
         this.name=name;
         this.staff_id=id;
         contact=number;
@@ -44,11 +45,11 @@ public class Users {
         this.contact = contact_no;
     }
 
-    public int getDate_of_birth() {
+    public Date getDate_of_birth() {
         return DOB;
     }
 
-    public void setDOB(int date_of_birth) {
+    public void setDOB(Date date_of_birth) {
         this.DOB = date_of_birth;
     }
 
