@@ -4,6 +4,7 @@ import Database.DAO.ProfileDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
@@ -30,6 +31,9 @@ public class LoginController {
     private TextField userid;
 
 
+    public LoginController() throws IOException {
+    }
+
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         if (userid.getText().isBlank() && password.getText().isBlank()) {
@@ -44,8 +48,12 @@ public class LoginController {
             boolean b =checklogin();
             if(b){
                 int id =Integer.parseInt(userid.getText());
-                ProfileController.getid(id);
+
+//                ProfileController.getid(id);
+
                 FXMLLoader loader = new FXMLLoader();
+                ProfileController is = loader.getController();
+                is.getid(id);
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
                 BorderPane pane = loader.load();

@@ -2,8 +2,10 @@ package UI.Controller;
 
 import Database.DAO.ProfileDAO;
 import UI.Elements.ConfirmBox;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,9 +15,11 @@ import javafx.stage.Stage;
 import sms.Users;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class ProfileController {
+public class ProfileController implements Initializable {
     @FXML
     private Button changepass;
     @FXML
@@ -49,21 +53,12 @@ public class ProfileController {
     @FXML
     private static Label phonenumberlabel;
 
-static int id1;
+int id1;
 
-    static void getid(int id) throws SQLException, ClassNotFoundException {
-       id1=id;
-        Users u = ProfileDAO.showProfile(id1);
-        idlabel.setText(String.valueOf(id1));
-        namelabel.setText(u.getName());
-        departmentlabel.setText(u.getDepartment());
-        doblabel.setText(String.valueOf(u.getDate_of_birth()));
-        phonenumberlabel.setText(String.valueOf(u.getContact()));
-   }
+    public void getid(int id ) {
+        id1 = id;
+    }
 
-  void setlabel() {
-
-  }
 
 @FXML
 private Button byteme1;
@@ -112,8 +107,10 @@ private Button byteme1;
     }
 
 
-
-
-
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(() -> {
+            idlabel.setText(String.valueOf(id1));
+        });
     }
+}
