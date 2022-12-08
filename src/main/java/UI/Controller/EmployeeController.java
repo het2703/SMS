@@ -34,13 +34,13 @@ public class EmployeeController implements Initializable {
     private TableColumn<Employee, String> gendercall;
 
     @FXML
-    private TableColumn<Employee, Long> idcol;
+    private TableColumn<Employee, Integer> idcol;
 
     @FXML
     private TableColumn<Employee, String> namecol;
 
     @FXML
-    private TableColumn<Employee, Long> phonecol;
+    private TableColumn<Employee, Integer> phonecol;
 
     @FXML
     private TextField searchemp;
@@ -63,13 +63,14 @@ public class EmployeeController implements Initializable {
         }
 
 
+
     ObservableList<Employee> datalist = FXCollections.observableArrayList();
 
     @FXML
     void search(){
         namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
-        idcol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("idcol"));
-        phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("phonecol"));
+        idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("idcol"));
+        phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
 
