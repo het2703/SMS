@@ -5,7 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -14,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import sms.Employee;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,6 +46,9 @@ public class EmployeeController implements Initializable {
     @FXML
     private TextField searchemp;
 
+    public EmployeeController() throws IOException {
+    }
+
     @FXML
     void addemployee(MouseEvent event) {
 
@@ -59,42 +65,45 @@ void remove(){
     }
     ObservableList<Employee> datalist = FXCollections.observableArrayList();
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        {
-            namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
-            idcol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("idcol"));
-            phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("phonecol"));
-            gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
+    @FXML
+    void search(){
+        namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
+        idcol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("idcol"));
+        phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Long>("phonecol"));
+        gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
 
 //        datalist=//connect.getusersdata()
 
-            tableview.setItems(datalist);
-            FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
-            searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
-            {
-                filtereddata.setPredicate(person -> {
-                    if (newValue == null && newValue.isEmpty()) {
-                        return true;
-                    }
-                    String lowerCaseFilter = newValue.toLowerCase();
-                    if (person.getFirst_name().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                        return true;
-                    } else if (person.getGender().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
+        tableview.setItems(datalist);
+        FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
+        searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
+        {
+            filtereddata.setPredicate(person -> {
+                if (newValue == null && newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (person.getFirst_name().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (person.getGender().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else {
+                    return false;
+                }
             });
-            SortedList<Employee> sorteddata = new SortedList<>(filtereddata);
-            sorteddata.comparatorProperty().bind(tableview.comparatorProperty());
-            tableview.setItems(sorteddata);
+        });
+        SortedList<Employee> sorteddata = new SortedList<>(filtereddata);
+        sorteddata.comparatorProperty().bind(tableview.comparatorProperty());
+        tableview.setItems(sorteddata);
 
-        }
+    }
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    search();
 
     }
 }

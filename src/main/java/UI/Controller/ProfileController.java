@@ -2,8 +2,10 @@ package UI.Controller;
 
 import Database.DAO.ProfileDAO;
 import UI.Elements.ConfirmBox;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,9 +15,11 @@ import javafx.stage.Stage;
 import sms.Users;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class ProfileController {
+public class ProfileController implements Initializable{
     @FXML
     private Button changepass;
     @FXML
@@ -36,34 +40,31 @@ public class ProfileController {
     private Button openprofrompass;
 
     @FXML
-    private static Label departmentlabel;
+    private Label departmentlabel;
 
     @FXML
-    private static Label doblabel;
+    private  Label doblabel;
 
     @FXML
-    private static Label idlabel;
+    private  Label idlabel;
     @FXML
-    private static Label namelabel;
+    private  Label namelabel;
 
     @FXML
-    private static Label phonenumberlabel;
+    private  Label phonenumberlabel;
 
-static int id1;
+int id1;
 
-    static void getid(int id) throws SQLException, ClassNotFoundException {
-       id1=id;
-        Users u = ProfileDAO.showProfile(id1);
-        idlabel.setText(String.valueOf(id1));
-        namelabel.setText(u.getName());
-        departmentlabel.setText(u.getDepartment());
-        doblabel.setText(String.valueOf(u.getDate_of_birth()));
-        phonenumberlabel.setText(String.valueOf(u.getContact()));
-   }
+    public void getid(int id ) throws SQLException, ClassNotFoundException {
+        id1 = id;
+//        Users u=ProfileDAO.showProfile(id1);
+//        idlabel.setText(String.valueOf(u.getStaff_id()));
+//        phonenumberlabel.setText(String.valueOf(u.getContact()));
+//        namelabel.setText(u.getName());
+//        departmentlabel.setText(u.getDepartment());
+//        doblabel.setText(String.valueOf(u.getDate_of_birth()));
+    }
 
-  void setlabel() {
-
-  }
 
 @FXML
 private Button byteme1;
@@ -112,8 +113,23 @@ private Button byteme1;
     }
 
 
-
-
-
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(() -> {
+            Users u= null;
+            try {
+                u = ProfileDAO.showProfile(id1);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            idlabel.setText(String.valueOf(u.getStaff_id()));
+            departmentlabel.setText((u.getDepartment()));
+            doblabel.setText(String.valueOf(u.getDate_of_birth()));
+            namelabel.setText(u.getName());
+            phonenumberlabel.setText(String.valueOf(u.getContact()));
+        });
     }
+}
+
