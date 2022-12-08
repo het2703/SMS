@@ -31,7 +31,7 @@
                </font>
             </Button>
             <Region layoutX="10.0" layoutY="291.0" prefHeight="20.0" prefWidth="386.0" />
-            <Button layoutX="73.0" layoutY="256.0" maxWidth="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #1f068c; -fx-background-radius: 20;" text="Stock Details" textFill="#adbed4">
+            <Button fx:id="stockbutton" layoutX="73.0" layoutY="256.0" maxWidth="300.0" mnemonicParsing="false" onMouseClicked="#stockdetails" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #1f068c; -fx-background-radius: 20;" text="Stock Details" textFill="#adbed4">
                <font>
                   <Font size="16.0" />
                </font>

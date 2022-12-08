@@ -7,13 +7,15 @@ import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import sms.Employee;
 
 import java.io.IOException;
@@ -21,11 +23,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EmployeeController implements Initializable {
+
     @FXML
     private Button addbutton;
 
-    @FXML
-    private TextField addemp;
+
     @FXML
     private TableView<Employee> tableview;
     @FXML
@@ -41,28 +43,26 @@ public class EmployeeController implements Initializable {
     private TableColumn<Employee, Long> phonecol;
 
     @FXML
-    private Button searchbutton;
-
-    @FXML
     private TextField searchemp;
 
-    public EmployeeController() throws IOException {
-    }
+
 
     @FXML
-    void addemployee(MouseEvent event) {
-
+    void addemployee(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/addemployee.fxml"));
+        BorderPane pane = loader.load();
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(pane);
+        stage.show();
     }
-@FXML
-void remove(){
+    @FXML
+    void remove(){
         int select = tableview.getSelectionModel().getSelectedIndex();
         tableview.getItems().remove(select);
-}
+        }
 
-    @FXML
-    void searchemployee(MouseEvent event) {
 
-    }
     ObservableList<Employee> datalist = FXCollections.observableArrayList();
 
     @FXML
@@ -73,7 +73,7 @@ void remove(){
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
 
-//        datalist=//connect.getusersdata()
+
 
         tableview.setItems(datalist);
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);

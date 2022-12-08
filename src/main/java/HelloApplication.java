@@ -10,7 +10,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
         stage.setTitle("Hello");
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(root,1800,850));
+        stage.setMaximized(true);
         stage.show();
     }
 //YE ek team project he
