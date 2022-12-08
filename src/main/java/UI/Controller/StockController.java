@@ -80,8 +80,8 @@ public class StockController {
 
         int id=Integer.parseInt(productid.getText());
         String pname=productname.getText();
-        Float price=Float.parseFloat(productprice.getText());
+        int price=Integer.parseInt(productprice.getText());
         int stock=Integer.parseInt(productquantity.getText());
-        return Products. createNewProduct( id,  pname,  price,  stock);
+        return Products. createNewProduct(id, pname, price, stock);
     }
 }

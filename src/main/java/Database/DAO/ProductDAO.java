@@ -33,7 +33,7 @@ public class ProductDAO {
         while (data.next()){
             int p_id = data.getInt("PRODUCT_ID");
             String p_name = data.getString("P_NAME");
-            float price = data.getFloat("PRICE");
+            int price = data.getInt("PRICE");
             int stock = data.getInt("STOCK");
             pro[counter] = new Products(p_id,p_name,price,stock);
             counter++;
