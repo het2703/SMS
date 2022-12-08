@@ -15,7 +15,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableview" editable="true" prefHeight="379.0" prefWidth="600.0" tableMenuButtonVisible="true">
+            <TableView fx:id="tableview" editable="true" prefHeight="341.0" prefWidth="600.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="idcol" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="namecol" prefWidth="75.0" text="Name" />
@@ -26,7 +26,6 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <HBox alignment="TOP_CENTER" prefHeight="54.0" prefWidth="600.0" />
          </children>
       </VBox>
    </center>

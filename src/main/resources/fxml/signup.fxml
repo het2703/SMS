@@ -78,7 +78,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="Cashier" mnemonicParsing="false" text="USER" />
+                        <RadioButton fx:id="Cashier" mnemonicParsing="false" prefHeight="18.0" prefWidth="71.0" text="CASHIER" />
                      </children>
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="22.0" prefWidth="276.0">

@@ -29,7 +29,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class EmployeeController implements Initializable {
+public class EmployeeController {
 
     @FXML
     private Button addbutton;
@@ -149,10 +149,10 @@ public class EmployeeController implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    search();
-
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//
+//    search();
+//
+//    }
 }
