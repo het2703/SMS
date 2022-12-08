@@ -19,7 +19,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable{
+public class ProfileController {
     @FXML
     private Button changepass;
     @FXML
@@ -43,31 +43,30 @@ public class ProfileController implements Initializable{
     private Label departmentlabel;
 
     @FXML
-    private  Label doblabel;
+    private Label doblabel;
 
     @FXML
-    private  Label idlabel;
+    private Label idlabel;
     @FXML
-    private  Label namelabel;
+    private Label namelabel;
 
     @FXML
-    private  Label phonenumberlabel;
+    private Label phonenumberlabel;
 
-int id1;
+    int id1;
 
-    public void getid(int id ) throws SQLException, ClassNotFoundException {
+    public ProfileController() throws SQLException, ClassNotFoundException {
+    }
+@FXML
+    public void getid(int id) throws SQLException, ClassNotFoundException {
         id1 = id;
-//        Users u=ProfileDAO.showProfile(id1);
-//        idlabel.setText(String.valueOf(u.getStaff_id()));
-//        phonenumberlabel.setText(String.valueOf(u.getContact()));
-//        namelabel.setText(u.getName());
-//        departmentlabel.setText(u.getDepartment());
-//        doblabel.setText(String.valueOf(u.getDate_of_birth()));
+        view();
+
     }
 
 
-@FXML
-private Button byteme1;
+    @FXML
+    private Button byteme1;
 
     @FXML
     void opendashboard_fromprofile(MouseEvent event) throws IOException {
@@ -111,25 +110,18 @@ private Button byteme1;
             stage.show();
         }
     }
+@FXML
+    void view() throws SQLException, ClassNotFoundException {
+        Users u = ProfileDAO.showProfile(id1);
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater(() -> {
-            Users u= null;
-            try {
-                u = ProfileDAO.showProfile(id1);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-            idlabel.setText(String.valueOf(u.getStaff_id()));
-            departmentlabel.setText((u.getDepartment()));
-            doblabel.setText(String.valueOf(u.getDate_of_birth()));
-            namelabel.setText(u.getName());
-            phonenumberlabel.setText(String.valueOf(u.getContact()));
-        });
+        idlabel.setText(String.valueOf(u.getStaff_id()));
+        departmentlabel.setText((u.getDepartment()));
+        doblabel.setText(String.valueOf(u.getDate_of_birth()));
+        namelabel.setText(u.getName());
+        phonenumberlabel.setText(String.valueOf(u.getContact()));
     }
 }
+
+
+
 
