@@ -1,6 +1,5 @@
 package UI.Controller;
 
-import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.fxml.FXML;
@@ -14,9 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import sms.Users;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.EventObject;
 import javafx.scene.control.Label;
 public class SignupController {
 
@@ -31,10 +27,10 @@ public class SignupController {
 
     @FXML
     private TextField newname;
-@FXML
-private RadioButton Admin;
-@FXML
-private RadioButton Cashier;
+    @FXML
+    private RadioButton Admin;
+    @FXML
+    private RadioButton Cashier;
     @FXML
     private PasswordField newpassword;
     @FXML

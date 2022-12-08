@@ -23,7 +23,15 @@ public class DashboardController {
     private Button logoutdash;
     @FXML
     void logoutnow(MouseEvent event) throws IOException {
-
+        boolean b = ConfirmBox.displayAlert("Logout?","Confirm logout");
+        if(b){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
+            Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+            BorderPane pane = loader.load();
+            stage.getScene().setRoot(pane);
+            stage.show();
+        }
     }
 
     @FXML
@@ -35,5 +43,4 @@ public class DashboardController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-    }
-
+}
