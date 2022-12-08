@@ -29,8 +29,6 @@ public class LoginController {
     private TextField userid;
 
 
-
-
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         if (userid.getText().isBlank() && password.getText().isBlank()) {
@@ -43,7 +41,6 @@ public class LoginController {
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
-                int id = Integer.parseInt(userid.getText());
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -69,16 +66,15 @@ public class LoginController {
         stage.show();
     }
 
-    @FXML
-    void signupnow(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/signup.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
-    }
-
+@FXML
+void signupnow(MouseEvent event) throws IOException {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getClassLoader().getResource("fxml/signup.fxml"));
+    Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+    BorderPane pane = loader.load();
+    stage.getScene().setRoot(pane);
+    stage.show();
+}
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());

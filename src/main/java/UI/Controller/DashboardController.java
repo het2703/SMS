@@ -14,6 +14,11 @@ import java.io.IOException;
 
 
 public class DashboardController {
+
+    @FXML
+    private Button employeedetails;
+
+
     @FXML
     private Button profilebutton;
 
@@ -36,6 +41,15 @@ public class DashboardController {
     void openprofile(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        BorderPane pane = loader.load();
+        stage.getScene().setRoot(pane);
+        stage.show();
+    }
+    @FXML
+    void employeeinfo(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/Employee Details.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);

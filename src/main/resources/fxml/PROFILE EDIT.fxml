@@ -15,24 +15,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.EditProfileController">
    <left>
       <VBox prefHeight="400.0" prefWidth="155.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="72.0" prefWidth="156.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="118.0" prefWidth="202.0" text="BYTE_ME">
+                  <Button fx:id="byteme3" mnemonicParsing="false" onMouseClicked="#opendash_fromeditpro" prefHeight="118.0" prefWidth="202.0" text="BYTE_ME">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="PROFILE" />
-            <Button layoutX="10.0" layoutY="82.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="EDIT PROFILE" />
-            <Button layoutX="10.0" layoutY="132.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="CHANGE PASSWORD" />
-            <Region prefHeight="329.0" prefWidth="155.0" />
-            <Button layoutX="10.0" layoutY="181.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="LOGOUT" />
+            <Button fx:id="openpro" mnemonicParsing="false" onMouseClicked="#openprofilefrommedit" prefHeight="49.0" prefWidth="190.0" text="PROFILE" />
+            <Button layoutX="10.0" layoutY="82.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="EDIT PROFILE" VBox.vgrow="ALWAYS" />
+            <Button fx:id="changepassidinedit" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#changepassinedit" prefHeight="49.0" prefWidth="190.0" text="CHANGE PASSWORD" VBox.vgrow="ALWAYS" />
+            <Region prefHeight="329.0" prefWidth="155.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="logoutfromeditpro" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logout_from_editpro" prefHeight="49.0" prefWidth="190.0" text="LOGOUT" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </left>
@@ -48,21 +48,17 @@
                            <image>
                               <Image url="@../../../Downloads/mm.png" />
                            </image></ImageView>
-                        <Label alignment="TOP_CENTER" prefHeight="36.0" prefWidth="174.0" text="Label">
-                           <padding>
-                              <Insets right="19.0" />
-                           </padding></Label>
                         <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="154.0" prefHeight="36.0" prefWidth="174.0" text="STATUS" />
                      </children>
                   </VBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="430.0">
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="430.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="54.0" prefWidth="430.0">
                            <children>
                               <Label prefHeight="41.0" prefWidth="118.0" text="EDIT PROFILE" />
                            </children>
                         </HBox>
-                        <GridPane alignment="CENTER" prefHeight="386.0" prefWidth="426.0">
+                        <GridPane alignment="CENTER" prefHeight="386.0" prefWidth="426.0" VBox.vgrow="ALWAYS">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -110,7 +106,11 @@
                            </VBox.margin>
                         </GridPane>
                      </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
                   </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
                </children>
             </HBox>
             <HBox prefHeight="124.0" prefWidth="745.0" styleClass="home" />

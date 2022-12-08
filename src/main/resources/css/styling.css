@@ -1,7 +1,12 @@
 .home{
     -fx-background-image: url("/img/b4.jpg");
-    -fx-background-postion: bottom right;
+
+    -fx-background-size: 100% 100%;
+
 }
 .sign{
+-fx-background-image: url("/img/b4.jpg");
+}
+.profile{
 -fx-background-image: url("/img/b4.jpg");
 }
