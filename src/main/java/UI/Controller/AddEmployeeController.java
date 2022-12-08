@@ -79,8 +79,8 @@ public class AddEmployeeController {
     }
     public boolean checkcred() throws ParseException, SQLException, ClassNotFoundException {
         int empid1= Integer.parseInt(empid.getText());
-        java.sql.Date dob1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(dob.toString());
-        java.sql.Date hiredate1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(hiredate.toString());
+        java.sql.Date dob1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(dob.getText());
+        java.sql.Date hiredate1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(hiredate.getText());
         String email1=email.getText();
         String firstn=firstname.getText();
         String gender1=gender.getText();

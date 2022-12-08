@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="649.0" styleClass="cus" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddCustomerController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="0.0" prefWidth="100.0" />
+            <Region prefHeight="14.0" prefWidth="100.0" />
+            <HBox prefHeight="0.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="471.0" prefWidth="554.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="500.0">
+               <children>
+                  <Region prefHeight="46.0" prefWidth="58.0" />
+                  <Label text="Add New Customer" textFill="#13336e">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Region prefHeight="35.0" prefWidth="446.0" />
+            <HBox prefHeight="226.0" prefWidth="500.0">
+               <children>
+                  <Region prefHeight="170.0" prefWidth="43.0" HBox.hgrow="ALWAYS" />
+                  <GridPane alignment="CENTER" hgap="5.0" prefHeight="238.0" prefWidth="420.0" vgap="25.0" HBox.hgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.59998168945313" minHeight="10.0" prefHeight="28.400000000000006" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.600012207031256" minHeight="10.0" prefHeight="28.400000000000006" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="42.0" prefWidth="281.0" text="First Name" textFill="#13336e" underline="true">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="349.0" text="Last Name" textFill="#13336e" underline="true" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="40.0" prefHeight="42.0" prefWidth="312.0" text="E-mail" textFill="#13336e" underline="true" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="66.0" prefHeight="42.0" prefWidth="312.0" text="Phone Number" textFill="#13336e" underline="true" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="94.0" prefHeight="42.0" prefWidth="312.0" text="Expenditure" textFill="#13336e" underline="true" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fname" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+                        <TextField fx:id="lname" layoutX="223.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="email1" layoutX="223.0" layoutY="32.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="phonenumber" layoutX="223.0" layoutY="64.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="expenditure" layoutX="223.0" layoutY="95.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Region prefHeight="235.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="550.0">
+               <children>
+                  <Region prefHeight="78.0" prefWidth="550.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="56.0" prefWidth="112.0">
+                           <cursor>
+                              <Cursor fx:constant="V_RESIZE" />
+                           </cursor>
+                        </Region>
+                        <Button fx:id="addconsumerbutton" mnemonicParsing="false" onMouseClicked="#addconsumer" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Add" textFill="WHITE" />
+                        <Region layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="49.0" />
+                        <Button fx:id="cancelbutton" layoutX="102.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#canceltodashboard" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Cancel" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Region prefHeight="116.0" prefWidth="650.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
