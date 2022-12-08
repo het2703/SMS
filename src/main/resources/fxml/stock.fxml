@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="190.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="99.0" prefWidth="188.0" text="BYTE_ME">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin>
+            </Button>
+            <Region layoutX="10.0" layoutY="145.0" prefHeight="19.0" prefWidth="190.0" />
+            <Button layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="190.0" text="STOCK">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin>
+            </Button>
+            <Region prefHeight="19.0" prefWidth="190.0" />
+            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" text="UPDATE">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin>
+            </Button>
+            <Region layoutX="10.0" layoutY="186.0" prefHeight="19.0" prefWidth="190.0" />
+            <Button layoutX="10.0" layoutY="218.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" text="DELETE">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin></Button>
+            <Region prefHeight="312.0" prefWidth="190.0" VBox.vgrow="ALWAYS" />
+            <Button layoutX="10.0" layoutY="197.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" text="LOGOUT">
+               <VBox.margin>
+                  <Insets right="2.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="58.0" prefWidth="700.0">
+               <children>
+                  <Region prefHeight="34.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
+                  <Label prefHeight="62.0" prefWidth="134.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
+                  <Region layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="85.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <GridPane prefHeight="360.0" prefWidth="162.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="110.80000457763671" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="403.59999542236324" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="394.0" prefWidth="700.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn prefWidth="144.79998779296875" text="Product Id" />
+                      <TableColumn prefWidth="194.39999389648438" text="product  name" />
+                      <TableColumn prefWidth="175.2000732421875" text="price" />
+                        <TableColumn prefWidth="187.199951171875" text="stock" />
+                    </columns>
+                  </TableView>
+                  <GridPane prefHeight="83.0" prefWidth="698.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="105.0" text="PRODUCT NAME" />
+                        <Label prefHeight="18.0" prefWidth="115.0" text="PRODUCT ID" GridPane.columnIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="111.0" text="PRICE" GridPane.columnIndex="3" />
+                        <TextField prefHeight="62.0" prefWidth="173.0" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField layoutX="10.0" layoutY="53.0" prefHeight="78.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="2.0" right="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField layoutX="10.0" layoutY="53.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="2.0" right="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField layoutX="363.0" layoutY="48.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="2.0" right="2.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets right="4.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="18.0" prefWidth="76.0" text="QUANTITY" GridPane.columnIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="178.0" text="SEARCH" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="416.0" text="ADD" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="100.0" right="2.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
