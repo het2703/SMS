@@ -18,7 +18,7 @@
    <left>
       <VBox prefHeight="600.0" prefWidth="190.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="99.0" prefWidth="188.0" text="BYTE_ME">
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="242.0" text="BYTE_ME">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
@@ -30,7 +30,7 @@
                </VBox.margin>
             </Button>
             <Region prefHeight="19.0" prefWidth="190.0" />
-            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" text="UPDATE">
+            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="189.0" text="UPDATE">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
@@ -41,7 +41,7 @@
                   <Insets right="2.0" />
                </VBox.margin></Button>
             <Region prefHeight="312.0" prefWidth="190.0" VBox.vgrow="ALWAYS" />
-            <Button layoutX="10.0" layoutY="197.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" text="LOGOUT">
+            <Button layoutX="10.0" layoutY="197.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="198.0" text="LOGOUT">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
@@ -55,7 +55,7 @@
             <HBox prefHeight="58.0" prefWidth="700.0">
                <children>
                   <Region prefHeight="34.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
-                  <Label prefHeight="62.0" prefWidth="134.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
+                  <Label prefHeight="58.0" prefWidth="112.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
                   <Region layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="85.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
@@ -122,10 +122,10 @@
                            </GridPane.margin>
                         </TextField>
                         <Label prefHeight="18.0" prefWidth="76.0" text="QUANTITY" GridPane.columnIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="178.0" text="SEARCH" GridPane.rowIndex="2" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="416.0" text="ADD" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="217.0" text="SEARCH" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="ADD" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <GridPane.margin>
-                              <Insets left="100.0" right="2.0" />
+                              <Insets />
                            </GridPane.margin>
                         </Button>
                      </children>

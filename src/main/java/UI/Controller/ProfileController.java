@@ -2,10 +2,10 @@ package UI.Controller;
 
 import Database.DAO.ProfileDAO;
 import UI.Elements.ConfirmBox;
-import javafx.application.Platform;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 import sms.Users;
 
 import java.io.IOException;
-import java.net.URL;
+
 import java.sql.SQLException;
-import java.util.ResourceBundle;
+
 
 public class ProfileController {
     @FXML
@@ -57,7 +57,7 @@ public class ProfileController {
 
     public ProfileController() throws SQLException, ClassNotFoundException {
     }
-@FXML
+    @FXML
     public void getid(int id) throws SQLException, ClassNotFoundException {
         id1 = id;
         view();

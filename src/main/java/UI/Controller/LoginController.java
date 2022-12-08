@@ -1,10 +1,8 @@
 package UI.Controller;
 
-import Database.DAO.ProfileDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
@@ -72,15 +70,15 @@ public class LoginController {
         stage.show();
     }
 
-@FXML
-void signupnow(MouseEvent event) throws IOException {
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getClassLoader().getResource("fxml/signup.fxml"));
-    Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-    BorderPane pane = loader.load();
-    stage.getScene().setRoot(pane);
-    stage.show();
-}
+    @FXML
+    void signupnow(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/signup.fxml"));
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        BorderPane pane = loader.load();
+        stage.getScene().setRoot(pane);
+        stage.show();
+    }
     @FXML
     public boolean checklogin() throws SQLException, ClassNotFoundException {
         int savedValue = Integer.parseInt(userid.getText());

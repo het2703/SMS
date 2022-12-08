@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView editable="true" prefHeight="379.0" prefWidth="600.0" tableMenuButtonVisible="true">
+            <TableView editable="true" prefHeight="339.0" prefWidth="600.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn prefWidth="75.0" text="Name" />
                 <TableColumn prefWidth="75.0" text="ID" />
@@ -26,19 +26,18 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <HBox alignment="TOP_CENTER" prefHeight="54.0" prefWidth="600.0" />
          </children>
       </VBox>
    </center>
    <top>
-      <VBox alignment="TOP_CENTER" prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="919.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="TOP_CENTER" prefHeight="21.0" prefWidth="234.0" text="My Market Management">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="912.0">
                <children>
                   <HBox prefHeight="36.0" prefWidth="109.0">
                      <children>
