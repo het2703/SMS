@@ -49,11 +49,12 @@ public class ProfileController {
     @FXML
     private static Label phonenumberlabel;
 
-
+static int id1;
 
     static void getid(int id) throws SQLException, ClassNotFoundException {
-        Users u = ProfileDAO.showProfile(id);
-        idlabel.setText(String.valueOf(u.getStaff_id()));
+       id1=id;
+        Users u = ProfileDAO.showProfile(id1);
+        idlabel.setText(String.valueOf(id1));
         namelabel.setText(u.getName());
         departmentlabel.setText(u.getDepartment());
         doblabel.setText(String.valueOf(u.getDate_of_birth()));
@@ -64,8 +65,8 @@ public class ProfileController {
 
   }
 
-    @FXML
-    private Button byteme1;
+@FXML
+private Button byteme1;
 
     @FXML
     void opendashboard_fromprofile(MouseEvent event) throws IOException {
