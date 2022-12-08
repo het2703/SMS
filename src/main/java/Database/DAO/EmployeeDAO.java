@@ -33,7 +33,7 @@ public class EmployeeDAO {
     {
         int counter = 0;
         while(data.next()) {
-            long e_id = data.getLong("EMPLOYEE_ID");
+            int e_id = data.getInt("EMPLOYEE_ID");
             String e_fname = data.getString("FIRST_NAME");
             String e_lname = data.getString("LAST_NAME");
             String email = data.getString("EMAIL");
@@ -46,48 +46,5 @@ public class EmployeeDAO {
             counter++;
         }
     }
-    public static void updateEmpEmail (String empId, String empEmail) throws SQLException, ClassNotFoundException {
-        String updateStmt =
-                "BEGIN\n" +
-                        "   UPDATE employees\n" +
-                        "      SET EMAIL = '" + empEmail + "'\n" +
-                        "    WHERE EMPLOYEE_ID = " + empId + ";\n" +
-                        "   COMMIT;\n" +
-                        "END;";
-        try {
-            DB.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while UPDATE Operation: " + e);
-            throw e;
-        }
-    }
-    public static void deleteEmpWithId (String empId) throws SQLException, ClassNotFoundException {
-        String updateStmt =
-                "BEGIN\n" +
-                        "   DELETE FROM employees\n" +
-                        "         WHERE employee_id ="+ empId +";\n" +
-                        "   COMMIT;\n" +
-                        "END;";
-        try {
-            DB.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while DELETE Operation: " + e);
-            throw e;
-        }
-    }
-    public static void insertEmp (String name, String lastname, String email) throws SQLException, ClassNotFoundException {
-        String updateStmt =
-                "BEGIN\n" +
-                        "INSERT INTO employees\n" +
-                        "(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID)\n" +
-                        "VALUES\n" +
-                        "(sequence_employee.nextval, '"+name+"', '"+lastname+"','"+email+"', SYSDATE, 'IT_PROG');\n" +
-                        "END;";
-        try {
-            DB.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while DELETE Operation: " + e);
-            throw e;
-        }
-    }
+
 }

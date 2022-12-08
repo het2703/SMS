@@ -57,8 +57,19 @@ public class Customer {
         this.expenditure = expenditure;
     }
 
-    public boolean createNewEmployee() throws SQLException, ClassNotFoundException {
-        String query = "INSERT INTO customer VALUES (";
+    public boolean createNewCustomer(int id, String fname, String lname, long contact, int exp) throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO `byte_me`.`customer`\n" +
+                "(`customer_id`,\n" +
+                "`first_name`,\n" +
+                "`last_name`,\n" +
+                "`phone_number`,\n" +
+                "`expenditure`)\n" +
+                "VALUES\n" +
+                "("+id+",\n" +
+                "\""+fname+"\",\n" +
+                "\""+lname+"\",\n" +
+                "\""+contact+"\",\n" +
+                "\""+exp+"\");";
         return DB.dbExecuteUpdate(query);
     }
 }
