@@ -36,31 +36,33 @@ public class ProfileController {
     private Button openprofrompass;
 
     @FXML
-    private Label departmentlabel;
+    private static Label departmentlabel;
 
     @FXML
-    private Label doblabel;
+    private static Label doblabel;
 
     @FXML
     private static Label idlabel;
     @FXML
-    private Label namelabel;
+    private static Label namelabel;
 
     @FXML
-    private Label phonenumberlabel;
+    private static Label phonenumberlabel;
 
-int id1;
-   public ProfileController(int id) throws SQLException, ClassNotFoundException {
-       this.id1=id;
-       setlabel();
+static int id1;
+
+    static void getid(int id) throws SQLException, ClassNotFoundException {
+       id1=id;
+        Users u = ProfileDAO.showProfile(id1);
+        idlabel.setText(String.valueOf(id1));
+        namelabel.setText(u.getName());
+        departmentlabel.setText(u.getDepartment());
+        doblabel.setText(String.valueOf(u.getDate_of_birth()));
+        phonenumberlabel.setText(String.valueOf(u.getContact()));
    }
-   Users u = ProfileDAO.showProfile(id1);
+
   void setlabel() {
-      idlabel.setText(String.valueOf(id1));
-      namelabel.setText(u.getName());
-      departmentlabel.setText(u.getDepartment());
-      doblabel.setText(String.valueOf(u.getDate_of_birth()));
-      phonenumberlabel.setText(String.valueOf(u.getContact()));
+
   }
 
 @FXML
