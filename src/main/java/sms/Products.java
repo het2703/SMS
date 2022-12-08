@@ -3,23 +3,23 @@ import Database.DB;
 import java.sql.SQLException;
 
 public class Products {
-    private long product_id;
+    private int product_id;
     private String name;
-    private int price;
+    private float price;
     private int Stock;
 
-    public Products(long product_id, String name, int price, int stock) {
+    public Products(int product_id, String name, float price, int stock) {
         this.product_id = product_id;
         this.name = name;
         this.price = price;
         Stock = stock;
     }
 
-    public long getProduct_id() {
+    public int getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(long product_id) {
+    public void setProduct_id(int product_id) {
         this.product_id = product_id;
     }
 
@@ -31,11 +31,11 @@ public class Products {
         this.name = name;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -47,8 +47,17 @@ public class Products {
         Stock = stock;
     }
 
-    public boolean createNewProduct() throws SQLException, ClassNotFoundException {
-        String query = "INSERT INTO products VALUES (";
+    public boolean createNewProduct(int id, String pname, float price, int stock) throws SQLException, ClassNotFoundException {
+        String query = "INSERT INTO `byte_me`.`products`\n" +
+                "(`PRODUCT_ID`,\n" +
+                "`P_NAME`,\n" +
+                "`PRICE`,\n" +
+                "`STOCK`)\n" +
+                "VALUES\n" +
+                "("+id+",\n" +
+                "\""+pname+"\",\n" +
+                "\""+price+"\",\n" +
+                "\""+stock+"\");";
         return DB.dbExecuteUpdate(query);
     }
 }

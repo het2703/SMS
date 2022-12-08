@@ -13,8 +13,6 @@ public class Employee {
     private String gender;
     private int salary;
 
-    // git hub bdiya hai
-
     public Employee(int employee_id, String first_name, String last_name, String email, long phone_number, Date hire_date, Date DOB, String gender, int salary) {
         this.employee_id = employee_id;
         this.first_name = first_name;
@@ -99,7 +97,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, Date hire_date, Date DOB, String gender,int salary) throws SQLException, ClassNotFoundException {
+    public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, Date hire_date, Date DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
         String query = "\n" +
                 "INSERT INTO `byte_me`.`employee`\n" +
                 "(`EMPLOYRR_ID`,\n" +
