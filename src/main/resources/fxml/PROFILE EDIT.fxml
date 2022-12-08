@@ -21,18 +21,52 @@
          <children>
             <HBox prefHeight="72.0" prefWidth="156.0">
                <children>
-                  <Button fx:id="byteme3" mnemonicParsing="false" onMouseClicked="#opendash_fromeditpro" prefHeight="118.0" prefWidth="202.0" text="BYTE_ME">
+                  <Button fx:id="byteme3" mnemonicParsing="false" onMouseClicked="#opendash_fromeditpro" prefHeight="118.0" prefWidth="202.0">
                      <font>
                         <Font size="26.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="66.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/DESIGN.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
                   </Button>
                </children>
             </HBox>
-            <Button fx:id="openpro" mnemonicParsing="false" onMouseClicked="#openprofilefrommedit" prefHeight="49.0" prefWidth="190.0" text="PROFILE" />
-            <Button layoutX="10.0" layoutY="82.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="EDIT PROFILE" VBox.vgrow="ALWAYS" />
+            <Button fx:id="openpro" mnemonicParsing="false" onMouseClicked="#openprofilefrommedit" prefHeight="49.0" prefWidth="190.0" text="PROFILE">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/p1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="25.0" />
+               </padding></Button>
+            <Button layoutX="10.0" layoutY="82.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" text="EDIT PROFILE" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/p1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button fx:id="changepassidinedit" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#changepassinedit" prefHeight="49.0" prefWidth="190.0" text="CHANGE PASSWORD" VBox.vgrow="ALWAYS" />
             <Region prefHeight="329.0" prefWidth="155.0" VBox.vgrow="ALWAYS" />
-            <Button fx:id="logoutfromeditpro" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logout_from_editpro" prefHeight="49.0" prefWidth="190.0" text="LOGOUT" VBox.vgrow="ALWAYS" />
+            <Button fx:id="logoutfromeditpro" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logout_from_editpro" prefHeight="49.0" prefWidth="190.0" text="LOGOUT" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logout_icon-icons.com_51025.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </VBox>
    </left>
@@ -46,8 +80,11 @@
                      <children>
                         <ImageView fitHeight="144.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Downloads/mm.png" />
-                           </image></ImageView>
+                              <Image url="@../img/mm.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin></ImageView>
                         <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="154.0" prefHeight="36.0" prefWidth="174.0" text="STATUS" />
                      </children>
                   </VBox>
