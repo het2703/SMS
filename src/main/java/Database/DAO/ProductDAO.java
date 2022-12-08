@@ -31,9 +31,9 @@ public class ProductDAO {
     private static void dataToArray(ResultSet data, Products[] pro) throws SQLException {
         int counter = 0;
         while (data.next()){
-            long p_id = data.getLong("PRODUCT_ID");
+            int p_id = data.getInt("PRODUCT_ID");
             String p_name = data.getString("P_NAME");
-            int price = data.getInt("PRICE");
+            float price = data.getFloat("PRICE");
             int stock = data.getInt("STOCK");
             pro[counter] = new Products(p_id,p_name,price,stock);
             counter++;
