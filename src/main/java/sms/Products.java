@@ -47,7 +47,7 @@ public class Products {
         Stock = stock;
     }
 
-    public boolean createNewProduct(int id, String pname, float price, int stock) throws SQLException, ClassNotFoundException {
+    public static boolean createNewProduct(int id, String pname, float price, int stock) throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO `byte_me`.`products`\n" +
                 "(`PRODUCT_ID`,\n" +
                 "`P_NAME`,\n" +

@@ -57,7 +57,7 @@ public class Customer {
         this.expenditure = expenditure;
     }
 
-    public boolean createNewCustomer(int id, String fname, String lname, long contact, int exp) throws SQLException, ClassNotFoundException {
+    public static boolean createNewCustomer(int id, String fname, String lname, long contact, int exp) throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO `byte_me`.`customer`\n" +
                 "(`customer_id`,\n" +
                 "`first_name`,\n" +

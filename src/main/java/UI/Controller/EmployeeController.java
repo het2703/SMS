@@ -1,5 +1,6 @@
 package UI.Controller;
 
+import Database.DAO.EmployeeDAO;
 import Database.DB;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -120,7 +121,6 @@ public class EmployeeController {
         idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("idcol"));
         phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
-
 
 
 

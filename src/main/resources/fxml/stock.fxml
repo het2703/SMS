@@ -18,7 +18,7 @@
    <left>
       <VBox prefHeight="600.0" prefWidth="190.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="242.0" text="BYTE_ME">
+            <Button fx:id="bytme1" mnemonicParsing="false" onMouseClicked="#stocktodash" prefHeight="89.0" prefWidth="242.0" text="BYTE_ME">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
@@ -41,7 +41,7 @@
                   <Insets right="2.0" />
                </VBox.margin></Button>
             <Region prefHeight="312.0" prefWidth="190.0" VBox.vgrow="ALWAYS" />
-            <Button layoutX="10.0" layoutY="197.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="198.0" text="LOGOUT">
+            <Button fx:id="logout" layoutX="10.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="49.0" prefWidth="198.0" text="LOGOUT">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
@@ -55,7 +55,12 @@
             <HBox prefHeight="58.0" prefWidth="700.0">
                <children>
                   <Region prefHeight="34.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
-                  <Label prefHeight="58.0" prefWidth="112.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="stockwarning" text="Label">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="24.0" prefWidth="112.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
                   <Region layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="85.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
@@ -92,12 +97,12 @@
                         <Label prefHeight="18.0" prefWidth="105.0" text="PRODUCT NAME" />
                         <Label prefHeight="18.0" prefWidth="115.0" text="PRODUCT ID" GridPane.columnIndex="1" />
                         <Label prefHeight="18.0" prefWidth="111.0" text="PRICE" GridPane.columnIndex="3" />
-                        <TextField prefHeight="62.0" prefWidth="173.0" GridPane.rowIndex="1">
+                        <TextField fx:id="productname" prefHeight="62.0" prefWidth="173.0" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField layoutX="10.0" layoutY="53.0" prefHeight="78.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="productid" layoutX="10.0" layoutY="53.0" prefHeight="78.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <padding>
                               <Insets left="2.0" right="2.0" />
                            </padding>
@@ -105,7 +110,7 @@
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField layoutX="10.0" layoutY="53.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <TextField fx:id="productquantity" layoutX="10.0" layoutY="53.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <padding>
                               <Insets left="2.0" right="2.0" />
                            </padding>
@@ -113,7 +118,7 @@
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField layoutX="363.0" layoutY="48.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <TextField fx:id="productprice" layoutX="363.0" layoutY="48.0" prefHeight="42.0" prefWidth="175.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <padding>
                               <Insets left="2.0" right="2.0" />
                            </padding>
@@ -123,7 +128,7 @@
                         </TextField>
                         <Label prefHeight="18.0" prefWidth="76.0" text="QUANTITY" GridPane.columnIndex="2" />
                         <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="217.0" text="SEARCH" GridPane.rowIndex="2" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="ADD" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Button fx:id="addbutton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#addproductnow" prefHeight="25.0" prefWidth="173.0" text="ADD" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
