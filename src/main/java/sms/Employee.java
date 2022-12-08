@@ -8,12 +8,12 @@ public class Employee {
     private String last_name;
     private String email;
     private long phone_number;
-    private String hire_date;
-    private String DOB;
+    private Date hire_date;
+    private Date DOB;
     private String gender;
     private int salary;
 
-    public Employee(int employee_id, String first_name, String last_name, String email, long phone_number, String hire_date, String DOB, String gender, int salary) {
+    public Employee(int employee_id, String first_name, String last_name, String email, long phone_number, Date hire_date, Date DOB, String gender, int salary) {
         this.employee_id = employee_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -57,11 +57,11 @@ public class Employee {
         return phone_number;
     }
 
-    public String getHire_date() {
+    public Date getHire_date() {
         return hire_date;
     }
 
-    public void setHire_date(String hire_date) {
+    public void setHire_date(Date hire_date) {
         this.hire_date = hire_date;
     }
 
@@ -81,11 +81,11 @@ public class Employee {
         this.phone_number = phone_number;
     }
 
-    public String getDOB() {
+    public Date getDOB() {
         return DOB;
     }
 
-    public void setDOB(String DOB) {
+    public void setDOB(Date DOB) {
         this.DOB = DOB;
     }
 
@@ -97,7 +97,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, String hire_date, String DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
+    public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, Date hire_date, Date DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
         String query = "\n" +
                 "INSERT INTO `byte_me`.`employee`\n" +
                 "(`EMPLOYRR_ID`,\n" +

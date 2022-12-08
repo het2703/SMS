@@ -37,9 +37,9 @@ public class EmployeeDAO {
             String e_fname = data.getString("FIRST_NAME");
             String e_lname = data.getString("LAST_NAME");
             String email = data.getString("EMAIL");
-            long contact = data.getLong("PHONE_NUMBER");
-            String hire = data.getString("HIRE_DATE");
-            String DOB = data.getString("DOB");
+            long contact = data.getInt("PHONE_NUMBER");
+            Date hire = data.getDate("HIRE_DATE");
+            Date DOB = data.getDate("DOB");
             String gender = data.getString("GENDER");
             int salary = data.getInt("SALARY");
             emp[counter] = new Employee(e_id,e_fname,e_lname,email,contact,hire,DOB,gender,salary);

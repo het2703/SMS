@@ -13,10 +13,10 @@ import sms.Employee;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class AddEmployeeController {
     @FXML
@@ -77,11 +77,10 @@ public class AddEmployeeController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-
     public boolean checkcred() throws ParseException, SQLException, ClassNotFoundException {
         int empid1= Integer.parseInt(empid.getText());
-        String dob1 = dob.getText();
-        String hiredate1 = hiredate.getText();
+        java.sql.Date dob1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(dob.toString());
+        java.sql.Date hiredate1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(hiredate.toString());
         String email1=email.getText();
         String firstn=firstname.getText();
         String gender1=gender.getText();
