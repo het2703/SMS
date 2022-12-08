@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 public class AddEmployeeController {
@@ -79,8 +78,8 @@ public class AddEmployeeController {
     }
     public boolean checkcred() throws ParseException, SQLException, ClassNotFoundException {
         int empid1= Integer.parseInt(empid.getText());
-        java.sql.Date dob1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(dob.getText());
-        java.sql.Date hiredate1 = (java.sql.Date) new SimpleDateFormat("YYYY-MM-DD", Locale.ENGLISH).parse(hiredate.getText());
+        String dob1 = dob.getText();
+        String hiredate1 = hiredate.getText();
         String email1=email.getText();
         String firstn=firstname.getText();
         String gender1=gender.getText();

@@ -5,10 +5,10 @@ import java.sql.SQLException;
 public class Products {
     private int product_id;
     private String name;
-    private float price;
+    private int price;
     private int Stock;
 
-    public Products(int product_id, String name, float price, int stock) {
+    public Products(int product_id, String name, int price, int stock) {
         this.product_id = product_id;
         this.name = name;
         this.price = price;
@@ -31,11 +31,11 @@ public class Products {
         this.name = name;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -47,7 +47,7 @@ public class Products {
         Stock = stock;
     }
 
-    public static boolean createNewProduct(int id, String pname, float price, int stock) throws SQLException, ClassNotFoundException {
+    public static boolean createNewProduct(int id, String pname, int price, int stock) throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO `byte_me`.`products`\n" +
                 "(`PRODUCT_ID`,\n" +
                 "`P_NAME`,\n" +
