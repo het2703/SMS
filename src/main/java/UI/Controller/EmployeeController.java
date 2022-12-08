@@ -53,11 +53,11 @@ public class EmployeeController implements Initializable {
     void addemployee(MouseEvent event) {
 
     }
-    @FXML
-    void remove(){
-            int select = tableview.getSelectionModel().getSelectedIndex();
-            tableview.getItems().remove(select);
-    }
+@FXML
+void remove(){
+        int select = tableview.getSelectionModel().getSelectedIndex();
+        tableview.getItems().remove(select);
+}
 
     @FXML
     void searchemployee(MouseEvent event) {
