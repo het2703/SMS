@@ -1,7 +1,9 @@
 package sms;
 
+import java.util.Date;
+
 public class Cashier extends Users{
-    public Cashier(String name, int id, long number, int DOB) {
-        super(name, id, number, DOB, "CASHIER", pass);
+    public Cashier(int id,String name,  long number, Date DOB) {
+        super(id, name, number, DOB, "CASHIER");
     }
 }

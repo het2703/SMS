@@ -1,13 +1,8 @@
 package Database.DAO;
 
 import Database.DB;
-import javafx.scene.control.PasswordField;
-
-import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static Database.DB.size;
 
 public class Login {
     public static boolean credentials(int id, String password) throws SQLException, ClassNotFoundException {

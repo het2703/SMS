@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Users {
     protected String name;
-    protected long staff_id;
+    protected int staff_id;
     protected long contact;
     protected Date DOB;
     private String department;
@@ -21,6 +21,10 @@ public class Users {
         this.department=department;
     }
 
+    public Users() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -29,11 +33,11 @@ public class Users {
         this.name = name;
     }
 
-    public long getStaff_id() {
+    public int getStaff_id() {
         return staff_id;
     }
 
-    public void setStaff_id(long staff_id) {
+    public void setStaff_id(int staff_id) {
         this.staff_id = staff_id;
     }
 

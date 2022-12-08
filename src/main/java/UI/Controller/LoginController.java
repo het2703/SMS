@@ -1,5 +1,6 @@
 package UI.Controller;
 
+import Database.DAO.ProfileDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -38,9 +39,12 @@ public class LoginController {
             );
 
         }
+
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
+                int id =Integer.parseInt(userid.getText());
+                ProfileController.getid(id);
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
