@@ -19,7 +19,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable {
+public class ProfileController {
     @FXML
     private Button changepass;
     @FXML
@@ -40,23 +40,29 @@ public class ProfileController implements Initializable {
     private Button openprofrompass;
 
     @FXML
-    private static Label departmentlabel;
+    private Label departmentlabel;
 
     @FXML
-    private static Label doblabel;
+    private  Label doblabel;
 
     @FXML
-    private static Label idlabel;
+    private  Label idlabel;
     @FXML
-    private static Label namelabel;
+    private  Label namelabel;
 
     @FXML
-    private static Label phonenumberlabel;
+    private  Label phonenumberlabel;
 
 int id1;
 
-    public void getid(int id ) {
+    public void getid(int id ) throws SQLException, ClassNotFoundException {
         id1 = id;
+        Users u=ProfileDAO.showProfile(id1);
+        idlabel.setText(String.valueOf(u.getStaff_id()));
+        phonenumberlabel.setText(String.valueOf(u.getContact()));
+        namelabel.setText(u.getName());
+        departmentlabel.setText(u.getDepartment());
+        doblabel.setText(String.valueOf(u.getDate_of_birth()));
     }
 
 
@@ -107,10 +113,8 @@ private Button byteme1;
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater(() -> {
-            idlabel.setText(String.valueOf(id1));
-        });
+
+
+
     }
-}
+
