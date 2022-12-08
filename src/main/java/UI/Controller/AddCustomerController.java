@@ -33,7 +33,7 @@ public class AddCustomerController {
     private TextField expenditure;
 
     @FXML
-    private String fname;
+    private TextField fname;
 
     @FXML
     private TextField lname;
@@ -72,10 +72,11 @@ public class AddCustomerController {
     }
 public boolean checkcustomer() throws SQLException, ClassNotFoundException {
        String lname1 = lname.getText();
+    String fname1 = fname.getText();
         int id1 = Integer.parseInt(customerid.getText());
         long contact=Long.parseLong(phonenumber.getText());
         int exp=Integer.parseInt(expenditure.getText());
-    return Customer. createNewCustomer( id1,  fname,  lname1,contact, exp);
+    return Customer. createNewCustomer( id1,  fname1,  lname1,contact, exp);
 }
 }
 

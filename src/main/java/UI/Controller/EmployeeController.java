@@ -122,8 +122,7 @@ public class EmployeeController {
         phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
-
-
+//        datalist=EmployeeDAO.searchEmployees();
         tableview.setItems(datalist);
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
         searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
