@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -30,29 +32,43 @@
       </VBox>
    </center>
    <top>
-      <VBox alignment="TOP_CENTER" prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="600.0" styleClass="emp" stylesheets="@../css/styling.css" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="21.0" prefWidth="234.0" text="My Market Management">
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="266.0" text="My Market Management">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/LOGO.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="109.0">
-                     <children>
-                        <Label prefHeight="73.0" prefWidth="97.0" text="BYTE_ME">
-                           <font>
-                              <Font name="Century" size="12.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
-                  <TextField fx:id="searchemp" prefHeight="26.0" prefWidth="190.0" promptText="Search Employee">
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="BYTE_ME">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/DESIGN.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox prefHeight="36.0" prefWidth="109.0" />
+                  <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/kisspng-computer-icons-web-search-engine-website-download-search-png-simple-5ab0b1e73838d8.9158675315215293192303.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchemp" prefHeight="32.0" prefWidth="194.0" promptText="Search Employee">
                      <HBox.margin>
                         <Insets right="9.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="addbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addemployee" prefHeight="28.0" prefWidth="58.0" text="Add">
+                  <Button fx:id="addbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addemployee" prefHeight="33.0" prefWidth="65.0" text="Add">
                      <HBox.margin>
                         <Insets left="9.0" />
                      </HBox.margin>
