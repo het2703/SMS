@@ -47,17 +47,10 @@ public class LoginController {
         else if (!userid.getText().isBlank() && !password.getText().isBlank()) {
             boolean b =checklogin();
             if(b){
-                int id =Integer.parseInt(userid.getText());
-
-//                ProfileController.getid(id);
-
                 FXMLLoader loader = new FXMLLoader();
-                ProfileController is = loader.getController();
-                is.getid(id);
-
                 loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-                Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
                 BorderPane pane = loader.load();
+                Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.getScene().setRoot(pane);
                 stage.show();
             }
