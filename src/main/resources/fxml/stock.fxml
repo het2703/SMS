@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -14,14 +16,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.StockController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="emp" stylesheets="@../css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.StockController">
    <left>
       <VBox prefHeight="600.0" prefWidth="190.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="bytme1" mnemonicParsing="false" onMouseClicked="#stocktodash" prefHeight="89.0" prefWidth="242.0" text="BYTE_ME">
+            <Button fx:id="bytme1" mnemonicParsing="false" onMouseClicked="#stocktodash" prefHeight="89.0" prefWidth="242.0">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="66.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/DESIGN.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Region layoutX="10.0" layoutY="145.0" prefHeight="19.0" prefWidth="190.0" />
             <Button layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="190.0" text="STOCK">
@@ -41,10 +50,17 @@
                   <Insets right="2.0" />
                </VBox.margin></Button>
             <Region prefHeight="312.0" prefWidth="190.0" VBox.vgrow="ALWAYS" />
-            <Button fx:id="logout" layoutX="10.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="49.0" prefWidth="198.0" text="LOGOUT">
+            <Button fx:id="logout" layoutX="10.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="49.0" prefWidth="198.0">
                <VBox.margin>
                   <Insets right="2.0" />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logout_icon-icons.com_51025.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
          </children>
       </VBox>
@@ -55,12 +71,17 @@
             <HBox prefHeight="58.0" prefWidth="700.0">
                <children>
                   <Region prefHeight="34.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
-                  <Label fx:id="stockwarning" text="Label">
+                  <ImageView fitHeight="76.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/LOGO.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="stockwarning">
                      <HBox.margin>
                         <Insets top="20.0" />
                      </HBox.margin>
                   </Label>
-                  <Label prefHeight="24.0" prefWidth="112.0" text="ALPHA SUPER MART" HBox.hgrow="ALWAYS" />
+                  <Label prefHeight="24.0" prefWidth="112.0" HBox.hgrow="ALWAYS" />
                   <Region layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="85.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
