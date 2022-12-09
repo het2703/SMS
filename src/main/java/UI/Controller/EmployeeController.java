@@ -2,8 +2,6 @@ package UI.Controller;
 
 import Database.DAO.EmployeeDAO;
 import Database.DB;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -22,15 +20,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import sms.Employee;
 
-import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class EmployeeController {
+import static Database.DB.size;
+
+public class EmployeeController implements Initializable {
 
     @FXML
     private Button addbutton;
@@ -64,28 +62,29 @@ public class EmployeeController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-    @FXML
-    void remove(){
-        int select = tableview.getSelectionModel().getSelectedIndex();
-        tableview.getItems().remove(select);
-        }
-
-
-
-    public ObservableList<Employee> datalist = FXCollections.observableArrayList();
-
-    @FXML
-    void search(){
+    private final ObservableList<Employee> datalist = FXCollections.observableArrayList();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
         namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
         idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("idcol"));
         phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
-        if (searchemp.)
+        try {
+            String query = "select * from employee";
+            ResultSet data = DB.dbExecuteQuery(query);
+            assert data != null;
+            int size = size(data);
+            Employee[] emp = new Employee[size];
+            EmployeeDAO.dataToArray(data,emp);
+            for (int i = 0; i < emp.length ; i++) {
+                datalist.add(i,emp[i]);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
-        datalist.add
-        tableview.setItems(datalist);
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
         searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
         {
@@ -108,12 +107,10 @@ public class EmployeeController {
         tableview.setItems(sorteddata);
 
     }
+    @FXML
+    void remove(){
+        int select = tableview.getSelectionModel().getSelectedIndex();
+        tableview.getItems().remove(select);
+        }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    search();
-
-    }
 }

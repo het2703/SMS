@@ -52,7 +52,7 @@ public class AddEmployeeController {
     @FXML
     private TextField empid;
     @FXML
-    void addnow(MouseEvent event) throws ParseException, SQLException, ClassNotFoundException, IOException {
+    void addnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
       boolean b= checkcred();
       if(b){
           FXMLLoader loader = new FXMLLoader();
@@ -76,7 +76,7 @@ public class AddEmployeeController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-    public boolean checkcred() throws ParseException, SQLException, ClassNotFoundException {
+    public boolean checkcred() throws SQLException, ClassNotFoundException {
         int empid1= Integer.parseInt(empid.getText());
         String dob1 = dob.getText();
         String hiredate1 = hiredate.getText();
