@@ -49,7 +49,7 @@ public class AddCustomerController {
         boolean b = checkcustomer();
         if (b) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("fxml/Customer.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             BorderPane pane = loader.load();
             stage.getScene().setRoot(pane);
@@ -62,9 +62,9 @@ public class AddCustomerController {
 
 
     @FXML
-    void canceltodashboard(MouseEvent event) throws IOException {
+    void canceltocustomer(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/Customer.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
