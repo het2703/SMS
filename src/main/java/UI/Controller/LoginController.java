@@ -64,7 +64,6 @@ public class LoginController {
     void forgotpassbutton(MouseEvent event) throws IOException {
 
     }
-
     @FXML
     void signupnow(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
