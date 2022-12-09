@@ -2,6 +2,8 @@ package UI.Controller;
 
 import Database.DAO.EmployeeDAO;
 import Database.DB;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -20,16 +22,26 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import sms.Employee;
 
+import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
-import static Database.DB.size;
-
-public class EmployeeController implements Initializable {
-
+public class EmployeeController {
+    @FXML
+    private Button bytme3;
+    @FXML
+    void gotodash(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
+        BorderPane pane = loader.load();
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(pane);
+        stage.show();
+    }
     @FXML
     private Button addbutton;
 
@@ -62,29 +74,66 @@ public class EmployeeController implements Initializable {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-    private final ObservableList<Employee> datalist = FXCollections.observableArrayList();
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    void remove(){
+        int select = tableview.getSelectionModel().getSelectedIndex();
+        tableview.getItems().remove(select);
+        }
 
+
+
+    public ObservableList<Employee> datalist;
+
+    @FXML
+    void search(){
+//        try {
+//            data = FXCollections.observableArrayList();
+//            String q = "";
+//            ResultSet rs = DB.dbExecuteQuery(q);
+//            if (tableview.getItems().isEmpty()) {
+//                for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+//                    //We are using non property style for making dynamic table. Borrowed from a CIS 3368 assignment by Colton Weber (the guy writing this code) https://github.com/shrike76/Student-Database-using-Java-MySQL-and-AWS
+//                    final int j = i;
+//                    TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
+//                    col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
+//                        public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
+//                            return new SimpleStringProperty(param.getValue().get(j).toString());
+//                        }
+//                    });
+//                    tableview.getColumns().addAll(col);
+//                    //System.out.println("Column [" + i + "] ");
+//                }
+//            }
+//
+//            while (rs.next()) {
+//                //Iterate Row
+//                ObservableList<String> row = FXCollections.observableArrayList();
+//                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+//                    //Iterate Column
+//                    String value = rs.getString(i);
+//                    if (rs.wasNull()) {
+//                        value = ""; // set it to empty string as you desire.
+//                    }
+//                    row.add(value);
+//                }
+//                //System.out.println("Row [1] added " + row);
+//                data.add((Employee) row);
+//
+//            }
+//            tableview.setItems(data);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            System.out.println("Error on Building Data");
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
         namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
         idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("idcol"));
         phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
 
-        try {
-            String query = "select * from employee";
-            ResultSet data = DB.dbExecuteQuery(query);
-            assert data != null;
-            int size = size(data);
-            Employee[] emp = new Employee[size];
-            EmployeeDAO.dataToArray(data,emp);
-            for (int i = 0; i < emp.length ; i++) {
-                datalist.add(i,emp[i]);
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
+//        datalist=EmployeeDAO.searchEmployees();
+        tableview.setItems(datalist);
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
         searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
         {
@@ -107,10 +156,12 @@ public class EmployeeController implements Initializable {
         tableview.setItems(sorteddata);
 
     }
-    @FXML
-    void remove(){
-        int select = tableview.getSelectionModel().getSelectedIndex();
-        tableview.getItems().remove(select);
-        }
 
+
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//
+//    search();
+//
+//    }
 }
