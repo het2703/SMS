@@ -45,7 +45,7 @@ public class ChangePasswordController {
     }
     @FXML
     void logout_from_pass(MouseEvent event) throws IOException {
-        boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout");
+        boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout ?");
         if (b) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));

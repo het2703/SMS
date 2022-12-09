@@ -48,7 +48,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="BYTE_ME">
+                  <Button fx:id="bytme3" mnemonicParsing="false" onMouseClicked="#gotodash" prefHeight="26.0" prefWidth="106.0" text="BYTE_ME">
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>

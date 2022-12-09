@@ -69,7 +69,6 @@ public class LoginController {
         stage.getScene().setRoot(pane);
         stage.show();
     }
-
     @FXML
     void signupnow(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
