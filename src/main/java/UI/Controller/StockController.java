@@ -53,14 +53,18 @@ public class StockController {
     @FXML
     void addproductnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
 
-        if(productid.getText().isBlank() || productname.getText().isBlank() || productprice.getText().isBlank() || productquantity.getText().isBlank()){
+        boolean b=addstock();
+        if(b){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
+            Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+            BorderPane pane = loader.load();
+            stage.getScene().setRoot(pane);
+            stage.show();
+        }
+        else{
             stockwarning.setText("Invalid details !");
         }
-        boolean b=addstock();
-        if(!b){
-            stockwarning.setText("Invalid details of stock!");
-        }
-
     }
 
     @FXML
