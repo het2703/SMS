@@ -31,7 +31,7 @@
                   </Button>
                </children>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="61.0" prefWidth="134.0" text=" PROFILE">
+            <Button fx:id="profile5" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#openprofilefrompro" prefHeight="61.0" prefWidth="134.0" text=" PROFILE">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -45,7 +45,7 @@
                <padding>
                   <Insets right="24.0" />
                </padding></Button>
-            <Button alignment="CENTER" layoutX="10.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#editprofilepage" prefHeight="32.0" prefWidth="134.0" text="EDIT PROFILE">
+            <Button fx:id="editprofile4" alignment="CENTER" layoutX="10.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#editprofilepage" prefHeight="32.0" prefWidth="134.0" text="EDIT PROFILE">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
@@ -58,9 +58,9 @@
                </graphic></Button>
             <Button layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#changepasspage" prefHeight="62.0" prefWidth="134.0" text="CHANGE PASSWORD" />
             <Region prefHeight="329.0" prefWidth="155.0" VBox.vgrow="ALWAYS" />
-            <Button fx:id="logoutfromprofile" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logout_from_profile" prefHeight="75.0" prefWidth="77.0">
+            <Button fx:id="logoutfromprofile" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logoutpop" prefHeight="75.0" prefWidth="77.0">
                <graphic>
-                  <ImageView fitHeight="61.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logout4" fitHeight="61.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/logout_icon-icons.com_51025.png" />
                      </image>

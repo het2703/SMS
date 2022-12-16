@@ -62,6 +62,9 @@ public class StockController {
             stage.getScene().setRoot(pane);
             stage.show();
         }
+        else if(productid.getText().isBlank() || productname.getText().isBlank() || productprice.getText().isBlank() || productquantity.getText().isBlank()){
+            stockwarning.setText("Invalid details !");
+        }
         else{
             stockwarning.setText("Invalid details !");
         }

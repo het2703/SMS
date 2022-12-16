@@ -37,7 +37,7 @@
                      </image>
                   </ImageView>
                   <Region prefHeight="13.0" prefWidth="276.0" />
-                  <Label fx:id="loginlabel" alignment="CENTER" prefHeight="26.0" prefWidth="126.0" textFill="RED" />
+                  <Label fx:id="loginlabel" alignment="CENTER" prefHeight="20.0" prefWidth="266.0" textFill="RED" />
                   <Region prefHeight="12.0" prefWidth="276.0" />
                   <HBox alignment="CENTER" prefHeight="36.0" prefWidth="310.0">
                      <children>

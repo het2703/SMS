@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -15,7 +16,23 @@ public class EditProfileController {
 
     @FXML
     private Button byteme3;
+    @FXML
+    private Button confirm;
 
+    @FXML
+    private TextField departmentprofile;
+
+    @FXML
+    private TextField dobprofile;
+
+    @FXML
+    private TextField idprofile;
+
+    @FXML
+    private TextField nameprofile;
+
+    @FXML
+    private TextField phoneprofile;
     @FXML
     void opendash_fromeditpro(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -35,10 +52,11 @@ public class EditProfileController {
         stage.show();
     }
 
+
     @FXML
     void openprofilefrommedit(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/profile1.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
@@ -56,4 +74,5 @@ public class EditProfileController {
             stage.show();
         }
     }
+
 }

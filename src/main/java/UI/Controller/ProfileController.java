@@ -21,6 +21,28 @@ import java.sql.SQLException;
 
 public class ProfileController {
     @FXML
+    private Button byteme1;
+
+    @FXML
+    private Button editprofile4;
+
+
+    @FXML
+    private Button logoutfromprofile;
+
+
+
+
+
+    @FXML
+    void logout_from_profile(MouseEvent event) {
+
+    }
+
+
+
+
+    @FXML
     private Button changepass;
     @FXML
     private Button logoutfromeditpro;
@@ -28,8 +50,7 @@ public class ProfileController {
     private Button editprofile;
     @FXML
     private Button changepassidinedit;
-    @FXML
-    private Button logoutfromprofile;
+
 
     @FXML
     private Button openpro;
@@ -64,9 +85,16 @@ public class ProfileController {
 
     }
 
-
     @FXML
-    private Button byteme1;
+    void openprofilefrompro(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        BorderPane pane = loader.load();
+        stage.getScene().setRoot(pane);
+        stage.show();
+    }
+
 
     @FXML
     void opendashboard_fromprofile(MouseEvent event) throws IOException {
@@ -99,7 +127,7 @@ public class ProfileController {
     }
 
     @FXML
-    void logout_from_profile(MouseEvent event) throws IOException {
+    void logoutpop(MouseEvent event) throws IOException {
         boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout ?");
         if (b) {
             FXMLLoader loader = new FXMLLoader();
