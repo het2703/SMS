@@ -85,7 +85,10 @@
                            <VBox.margin>
                               <Insets left="15.0" />
                            </VBox.margin></ImageView>
-                        <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="154.0" prefHeight="36.0" prefWidth="174.0" text="STATUS" />
+                        <Label fx:id="statuslabel" alignment="TOP_CENTER" layoutX="10.0" layoutY="154.0" prefHeight="35.0" prefWidth="174.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Label>
                      </children>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="430.0" HBox.hgrow="ALWAYS">
@@ -113,26 +116,24 @@
                           </rowConstraints>
                            <children>
                               <Label prefHeight="18.0" prefWidth="67.0" text="NAME" />
-                              <TextField GridPane.rowIndex="1">
+                              <TextField fx:id="nameprofile" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin></TextField>
-                              <Label prefHeight="18.0" prefWidth="106.0" text="DEPARTMENT" GridPane.columnIndex="1" />
                               <Label prefHeight="18.0" prefWidth="74.0" text="ID" GridPane.rowIndex="2" />
-                              <TextField layoutX="137.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField layoutX="137.0" layoutY="43.0" GridPane.rowIndex="3">
+                              <TextField fx:id="idprofile" layoutX="137.0" layoutY="43.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin></TextField>
                               <Label layoutX="10.0" layoutY="77.0" prefHeight="18.0" prefWidth="129.0" text="DATE OF BIRTH" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField layoutX="137.0" layoutY="73.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="dobprofile" layoutX="137.0" layoutY="73.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Label layoutX="10.0" layoutY="107.0" prefHeight="18.0" prefWidth="74.0" GridPane.rowIndex="4" />
-                              <TextField layoutX="137.0" layoutY="104.0" GridPane.rowIndex="5">
+                              <TextField fx:id="phoneprofile" layoutX="137.0" layoutY="104.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin></TextField>
-                              <Label layoutX="222.0" layoutY="264.0" prefHeight="18.0" prefWidth="102.0" text="PHONE NUMBER" GridPane.rowIndex="4" />
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="CONFIRM" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                              <Label layoutX="222.0" layoutY="264.0" prefHeight="18.0" prefWidth="102.0" text="PHONE NUMBER" GridPane.columnIndex="1" />
+                              <Button fx:id="confirm" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#confirmprofile" prefHeight="26.0" prefWidth="110.0" text="CONFIRM" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                  <GridPane.margin>
                                     <Insets left="60.0" />
                                  </GridPane.margin>

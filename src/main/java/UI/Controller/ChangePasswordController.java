@@ -27,7 +27,7 @@ public class ChangePasswordController {
     @FXML
     void open_profile_frompass(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/profile1.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);

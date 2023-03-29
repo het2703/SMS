@@ -6,6 +6,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -30,14 +32,14 @@
          <children>
             <VBox alignment="CENTER" prefHeight="302.0" prefWidth="276.0" style="-fx-background-radius: 10px;" VBox.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="200.0" text="Byte_Me">
+                  <ImageView fitHeight="112.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="10.0" />
                      </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
+                     <image>
+                        <Image url="@../img/LOGO.jpg" />
+                     </image>
+                  </ImageView>
                   <Region prefHeight="6.0" prefWidth="276.0" />
                   <Label alignment="CENTER" prefHeight="18.0" prefWidth="126.0" textFill="RED" />
                   <Region prefHeight="7.0" prefWidth="276.0" />

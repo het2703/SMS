@@ -56,11 +56,14 @@ public class StockController {
         boolean b=addstock();
         if(b){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
+            loader.setLocation(getClass().getClassLoader().getResource("fxml/stock.fxml"));
             Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
             BorderPane pane = loader.load();
             stage.getScene().setRoot(pane);
             stage.show();
+        }
+        else if(productid.getText().isBlank() || productname.getText().isBlank() || productprice.getText().isBlank() || productquantity.getText().isBlank()){
+            stockwarning.setText("Invalid details !");
         }
         else{
             stockwarning.setText("Invalid details !");

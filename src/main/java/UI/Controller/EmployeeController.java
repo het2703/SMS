@@ -51,7 +51,15 @@ public class EmployeeController implements Initializable {
     @FXML
     private TextField searchemp;
 
-
+    @FXML
+    void gottodash(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
+        BorderPane pane = loader.load();
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(pane);
+        stage.show();
+    }
 
     @FXML
     void addemployee(MouseEvent event) throws IOException {
@@ -84,6 +92,7 @@ public class EmployeeController implements Initializable {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        tableview.setItems(datalist);
 
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
         searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->
