@@ -76,16 +76,20 @@ public class Users {
         return Login.credentials(id,password);
     }
 
-    public static boolean createNewUser(int id, String name, String role, String password) throws SQLException, ClassNotFoundException {
+    public static boolean createNewUser(int id, String name, String role, long number, Date date, String password) throws SQLException, ClassNotFoundException {
         String query = "INSERT INTO `byte_me`.`users`\n" +
                 "(`id`,\n" +
                 "`name`,\n" +
                 "`department`,\n" +
+                "`number`,\n" +
+                "`DOB`,\n" +
                 "`password`)\n" +
                 "VALUES\n" +
                 "("+id+",\n" +
                 "\""+name+"\",\n" +
                 "\""+role+"\",\n" +
+                "\""+number+"\",\n" +
+                "\""+date+"\",\n" +
                 "\""+password+"\");";
         return DB.dbExecuteUpdate(query);
     }
