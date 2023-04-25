@@ -54,7 +54,7 @@ public class EmployeeController implements Initializable {
     @FXML
     void gottodash(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/Employee.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
         BorderPane pane = loader.load();
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(pane);

@@ -1,27 +1,24 @@
 package UI.Controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
+
+import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Users;
-import javafx.scene.control.Label;
+
 public class SignupController {
 
+    public Button loginagain;
+    public TextField newdate;
+    public TextField newphonenumber;
+    public Button signup;
     @FXML
-    private Button login11button;
-
-    @FXML
-    private Button login12;
-
+    private BorderPane signupPane;
     @FXML
     private Label signuplabel;
 
@@ -38,23 +35,13 @@ public class SignupController {
 
     @FXML
     void loginagain(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(signupPane,"fxml/login.fxml",event);
     }
     @FXML
     void validatesignup(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         boolean a= checksignup();
         if(a){
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
-            Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
+            JumpScene.changeScene(signupPane,"fxml/login.fxml",event);
         }
         else {
             signuplabel.setText("Enter your credential !");
@@ -63,6 +50,8 @@ public class SignupController {
 
     public boolean checksignup() throws SQLException, ClassNotFoundException {
         int newid = Integer.parseInt(newuserid.getText());
+        long phone = Long.parseLong(newphonenumber.getText());
+        Date date = Date.valueOf(newdate.getText());
        String s="";
         if(Admin.isSelected()){
            s="ADMIN";
@@ -71,7 +60,6 @@ public class SignupController {
         s="CASHIER";
         }
 
-       return Users.createNewUser(newid,newname.getText(),s,newpassword.getText());
+       return Users.createNewUser(newid,newname.getText(),s,phone,date,newpassword.getText());
     }
-
 }
