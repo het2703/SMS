@@ -4,6 +4,7 @@ import Database.DAO.EmployeeDAO;
 import Database.DAO.ProductDAO;
 import Database.DB;
 import UI.Elements.ConfirmBox;
+import UI.Elements.JumpScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -20,6 +21,7 @@ import javafx.stage.Stage;
 import sms.Employee;
 import sms.Products;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -29,21 +31,10 @@ import java.util.ResourceBundle;
 import static Database.DB.size;
 
 public class StockController implements Initializable {
-    @FXML
-    private Button addbutton;
-    @FXML
-    private TextField productid;
 
     @FXML
-    private TextField productname;
-
-    @FXML
-    private TextField productprice;
-
-    @FXML
-    private TextField productquantity;
-    @FXML
-    private Label stockwarning;
+    private ImageView s_id;
+    @FXML BorderPane stock_details_borderpane;
     @FXML
     private Button bytme1;
 
@@ -51,19 +42,22 @@ public class StockController implements Initializable {
     private Button logout;
 
     @FXML
-    private TableColumn<Products, Integer> product_id;
+    private TableColumn<Products, Integer> Product_Id;
 
     @FXML
-    private TableColumn<Products, String> p_name;
+    private TableColumn<Products, String> Product_Name;
 
     @FXML
-    private TableColumn<Products,Integer> price;
+    private TableColumn<Products,Integer> Price;
 
     @FXML
-    private TableColumn<Products,Integer> stock;
+    private TableColumn<Products,Integer> Stock;
 
     @FXML
-    private TableView<Products> product_view;
+    private TableView<Products> p_view;
+
+    @FXML
+    private TextField searchstock;
     @FXML
     void logoutnow(MouseEvent event) throws IOException {
         boolean b = ConfirmBox.displayAlert("Logout?","Confirm logout");
@@ -79,50 +73,22 @@ public class StockController implements Initializable {
 
     @FXML
     void addproductnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
-
-        boolean b=addstock();
-        if(b){
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/stock.fxml"));
-            Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
-        }
-        else if(productid.getText().isBlank() || productname.getText().isBlank() || productprice.getText().isBlank() || productquantity.getText().isBlank()){
-            stockwarning.setText("Invalid details !");
-        }
-        else{
-            stockwarning.setText("Invalid details !");
-        }
+        JumpScene.changeScene(stock_details_borderpane,"fxml/addStock.fxml",event);
     }
 
     @FXML
     void stocktodash(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
-    }
-    public boolean addstock() throws SQLException, ClassNotFoundException {
-
-        int id=Integer.parseInt(productid.getText());
-        String pname=productname.getText();
-        int price=Integer.parseInt(productprice.getText());
-        int stock=Integer.parseInt(productquantity.getText());
-        return Products. createNewProduct(id, pname, price, stock);
+        JumpScene.changeScene(stock_details_borderpane,"fxml/dashboard.fxml",event);
     }
 
     private final ObservableList<Products> datalist = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        product_id.setCellValueFactory(new PropertyValueFactory<Products, Integer>("product_id"));
-        p_name.setCellValueFactory(new PropertyValueFactory<Products, String>("P_name"));
-        price.setCellValueFactory(new PropertyValueFactory<Products, Integer>("price"));
-        stock.setCellValueFactory(new PropertyValueFactory<Products, Integer>("stock"));
+        Product_Id.setCellValueFactory(new PropertyValueFactory<Products, Integer>("product_id"));
+        Product_Name.setCellValueFactory(new PropertyValueFactory<Products, String>("name"));
+        Price.setCellValueFactory(new PropertyValueFactory<Products, Integer>("price"));
+        Stock.setCellValueFactory(new PropertyValueFactory<Products, Integer>("stock"));
 
         try {
             String query = "select * from products";
@@ -139,7 +105,7 @@ public class StockController implements Initializable {
         }
 
         FilteredList<Products> filtereddata = new FilteredList<>(datalist, b -> true);
-        productname.textProperty().addListener((observableValue, oldValue, newValue) ->
+        searchstock.textProperty().addListener((observableValue, oldValue, newValue) ->
         {
             filtereddata.setPredicate(person -> {
                 if (newValue == null && newValue.isEmpty()) {
@@ -155,8 +121,8 @@ public class StockController implements Initializable {
             });
         });
         SortedList<Products> sorteddata = new SortedList<>(filtereddata);
-        sorteddata.comparatorProperty().bind(product_view.comparatorProperty());
-        product_view.setItems(sorteddata);
+        sorteddata.comparatorProperty().bind(p_view.comparatorProperty());
+        p_view.setItems(sorteddata);
 
     }
 }

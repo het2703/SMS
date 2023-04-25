@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="add_stock_product" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="abcd" stylesheets="@background/abcd.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddEmployeeController">
+<BorderPane fx:id="add_stock_product" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="abcd" stylesheets="@background/abcd.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddStockController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -90,18 +90,9 @@
                               <Insets bottom="7.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label layoutX="10.0" layoutY="66.0" prefHeight="42.0" prefWidth="312.0" text="Stock" textFill="#13336e" underline="true" GridPane.rowIndex="8">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets bottom="7.0" />
-                           </GridPane.margin>
-                        </Label>
                         <TextField fx:id="add_product_name" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="add_quantity" layoutX="223.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <TextField fx:id="add_price" layoutX="223.0" layoutY="32.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <TextField fx:id="add_stock" layoutX="223.0" layoutY="64.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <TextField fx:id="add_product_id" layoutX="221.0" layoutY="249.0" prefHeight="26.0" prefWidth="207.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label fx:id="warninglabel" alignment="CENTER" prefHeight="18.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>

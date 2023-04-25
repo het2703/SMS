@@ -32,6 +32,8 @@ import static Database.DB.size;
 public class CustomerController implements Initializable {
 
     @FXML
+    private BorderPane custPane;
+    @FXML
     private Button addcustomerbutton;
 
     @FXML
@@ -39,11 +41,6 @@ public class CustomerController implements Initializable {
 
     @FXML
     private Button dashboard1;
-    @FXML
-    private TableView<Customer> tableview;
-//    @FXML
-//    private TableColumn<Customer, String> gendercolumn;
-
     @FXML
     private TableColumn<Customer, Integer> idcolumn;
 
@@ -54,15 +51,18 @@ public class CustomerController implements Initializable {
     private TableColumn<Customer, Integer> phonenumbercolumn;
 
     @FXML
+    private TableColumn<Customer,Integer> expcolumn;
+    @FXML
     private TextField searchtext;
 
     @FXML
     private TableView<Customer> customerview;
 
+
     @FXML
     void addcustomer(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/addnewcustomer.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/addcustomer.fxml"));
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         BorderPane pane = loader.load();
         stage.getScene().setRoot(pane);
@@ -99,7 +99,7 @@ public class CustomerController implements Initializable {
         namecolumn.setCellValueFactory(new PropertyValueFactory<Customer, String>("first_name"));
         idcolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("customer_id"));
         phonenumbercolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("phone_number"));
-     //   gendercolumn.setCellValueFactory(new PropertyValueFactory<Customer, String>("gender"));
+        expcolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("expenditure"));
 
 
         try {

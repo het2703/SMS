@@ -18,7 +18,6 @@ public class DashboardController {
     @FXML
     private Button employeedetails;
 
-
     @FXML
     private Button profilebutton;
 
@@ -47,6 +46,6 @@ public class DashboardController {
     }
     @FXML
     void stockdetails(MouseEvent event) throws IOException {
-        JumpScene.changeScene(dashPane,"fxml/stock.fxml",event);
+        JumpScene.changeScene(dashPane,"fxml/Stock1.fxml",event);
     }
 }

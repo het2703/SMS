@@ -31,6 +31,8 @@ import static Database.DB.size;
 public class EmployeeController implements Initializable {
 
     @FXML
+    private BorderPane empPane;
+    @FXML
     private Button addbutton;
 
     @FXML
@@ -51,6 +53,7 @@ public class EmployeeController implements Initializable {
     private TableColumn<Employee,String> emailcol;
     @FXML
     private TextField searchemp;
+
 
     @FXML
     void gottodash(MouseEvent event) throws IOException {
