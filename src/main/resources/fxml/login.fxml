@@ -59,20 +59,16 @@
                      </children>
                   </HBox>
                   <Region prefHeight="18.0" prefWidth="310.0" />
-                  <TextField fx:id="userid" alignment="CENTER" maxWidth="400.0" prefHeight="10.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="userid" alignment="CENTER" maxWidth="400.0" prefHeight="10.0" prefWidth="276.0" promptText="User ID" style="-fx-background-radius: 10;" styleClass="textfield" stylesheets="@../css/styling.css" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
                   <Region layoutX="10.0" layoutY="119.0" prefHeight="18.0" prefWidth="310.0" />
-                  <PasswordField fx:id="password" alignment="CENTER" maxWidth="400.0" promptText="Password" style="-fx-background-radius: 10;" />
+                  <PasswordField fx:id="password" alignment="CENTER" maxWidth="400.0" promptText="Password" style="-fx-background-radius: 10;" styleClass="textfield" stylesheets="@../css/styling.css" />
                   <Region prefHeight="17.0" prefWidth="276.0" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="41.0" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="3.0" prefWidth="310.0" style="-fx-background-radius: 10;" />
-                  <Button fx:id="forgotpass" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#forgotpassbutton" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Forgot Password?">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="9.0" prefWidth="310.0" />
                   <Button fx:id="loginbuttons2" mnemonicParsing="false" onMouseClicked="#loginnow" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
                      <VBox.margin>

@@ -13,3 +13,7 @@
 .emp{
 -fx-background-image: url("/img/cback.jpg");
 }
+.textfield:focused{
+   -fx-background-color:#fff;
+   -fx-border-width: 0px 0px 1.8px 0px;
+}
