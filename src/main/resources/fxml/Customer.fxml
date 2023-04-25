@@ -18,7 +18,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableview" editable="true" prefHeight="315.0" prefWidth="500.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+            <TableView fx:id="customerview" editable="true" prefHeight="315.0" prefWidth="500.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="namecolumn" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="idcolumn" prefWidth="75.0" text="ID" />
