@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="add_stock_product" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="abcd" stylesheets="@background/abcd.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddEmployeeController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="471.0" prefWidth="554.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="550.0">
+               <children>
+                  <Label text="Add New Product" textFill="#13336e">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Region prefHeight="35.0" prefWidth="446.0" />
+            <HBox prefHeight="226.0" prefWidth="500.0">
+               <children>
+                  <Region prefHeight="170.0" prefWidth="43.0" HBox.hgrow="ALWAYS" />
+                  <GridPane alignment="CENTER" hgap="5.0" prefHeight="306.0" prefWidth="422.0" vgap="25.0" HBox.hgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="10.399999999999999" minHeight="10.0" prefHeight="10.399999999999999" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.59998168945313" minHeight="10.0" prefHeight="28.400000000000006" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.600012207031256" minHeight="10.0" prefHeight="28.400000000000006" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label layoutX="10.0" layoutY="247.0" prefHeight="42.0" prefWidth="312.0" text="Product Id" textFill="#13336e" underline="true" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="42.0" prefWidth="281.0" text="Product Name" textFill="#13336e" underline="true" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="349.0" text="Quantity" textFill="#13336e" underline="true" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="40.0" prefHeight="42.0" prefWidth="312.0" text="Price" textFill="#13336e" underline="true" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="66.0" prefHeight="42.0" prefWidth="312.0" text="Stock" textFill="#13336e" underline="true" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="7.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="add_product_name" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="add_quantity" layoutX="223.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="add_price" layoutX="223.0" layoutY="32.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="add_stock" layoutX="223.0" layoutY="64.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="add_product_id" layoutX="221.0" layoutY="249.0" prefHeight="26.0" prefWidth="207.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="warninglabel" alignment="CENTER" prefHeight="18.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="40.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Region prefHeight="235.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="550.0">
+               <children>
+                  <Region prefHeight="78.0" prefWidth="550.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="add_button_stock" mnemonicParsing="false" onMouseClicked="#addnow" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Add" textFill="#eff5ff" />
+                        <Region layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="49.0" />
+                        <Button fx:id="cancel_button_stock" layoutX="102.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#cancelnow" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Cancel" textFill="#e5eeff" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
