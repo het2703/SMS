@@ -17,6 +17,9 @@ import java.sql.SQLException;
 public class LoginController {
 
     @FXML
+    private BorderPane loginPane;
+
+    @FXML
     private Button forgotpass;
 
     @FXML
@@ -27,10 +30,6 @@ public class LoginController {
 
     @FXML
     private TextField userid;
-
-
-    public LoginController() throws IOException {
-    }
 
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
