@@ -2,7 +2,6 @@ package Database.DAO;
 
 import Database.DB;
 import sms.Users;
-
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;

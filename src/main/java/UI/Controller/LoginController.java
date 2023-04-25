@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sms.Users;
+
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -19,6 +21,7 @@ public class LoginController {
 
     @FXML
     private BorderPane loginPane;
+
 
     @FXML
     private Button forgotpass;
@@ -32,6 +35,11 @@ public class LoginController {
     @FXML
     private TextField userid;
 
+    @FXML
+    void loop(MouseEvent event) throws IOException
+    {
+        JumpScene.changeScene(loginPane,"fxml/dashboard.fxml",event);
+    }
     @FXML
     void loginnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         if (userid.getText().isBlank() && password.getText().isBlank()) {

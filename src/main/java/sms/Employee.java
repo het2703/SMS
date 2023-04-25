@@ -99,12 +99,12 @@ public class Employee {
     public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, String hire_date, String DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
         String query = "\n" +
                 "INSERT INTO `byte_me`.`employee`\n" +
-                "(`EMPLOYEE_ID`,\n" +
+                "(`EMP_ID`,\n" +
                 "`FIRST_NAME`,\n" +
                 "`LAST_NAME`,\n" +
                 "`EMAIL`,\n" +
                 "`PHONE_NUMBER`,\n" +
-                "`HIRE_DATE`,\n" +
+                "`HIRE`,\n" +
                 "`DOB`,\n" +
                 "`GENDER`,\n" +
                 "`SALARY`)\n" +

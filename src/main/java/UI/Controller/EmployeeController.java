@@ -54,12 +54,12 @@ public class EmployeeController implements Initializable {
     @FXML
     void gottodash(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/Employee.fxml"));
         BorderPane pane = loader.load();
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(pane);
         stage.show();
-    }
+}
 
     @FXML
     void addemployee(MouseEvent event) throws IOException {
@@ -74,10 +74,10 @@ public class EmployeeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("namecol"));
-        idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("idcol"));
-        phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phonecol"));
-        gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gendercall"));
+        namecol.setCellValueFactory(new PropertyValueFactory<Employee, String>("first_name"));
+        idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("employee_id"));
+        phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phone_number"));
+        gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gender"));
 
         try {
             String query = "select * from employee";
@@ -92,7 +92,6 @@ public class EmployeeController implements Initializable {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        tableview.setItems(datalist);
 
         FilteredList<Employee> filtereddata = new FilteredList<>(datalist, b -> true);
         searchemp.textProperty().addListener((observableValue, oldValue, newValue) ->

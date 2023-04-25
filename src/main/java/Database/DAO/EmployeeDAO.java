@@ -10,12 +10,12 @@ public class EmployeeDAO {
     {
         int counter = 0;
         while(data.next()) {
-            int e_id = data.getInt("EMPLOYEE_ID");
+            int e_id = data.getInt("EMP_ID");
             String e_fname = data.getString("FIRST_NAME");
             String e_lname = data.getString("LAST_NAME");
             String email = data.getString("EMAIL");
             long contact = data.getLong("PHONE_NUMBER");
-            String hire = data.getString("HIRE_DATE");
+            String hire = data.getString("HIRE");
             String DOB = data.getString("DOB");
             String gender = data.getString("GENDER");
             int salary = data.getInt("SALARY");
