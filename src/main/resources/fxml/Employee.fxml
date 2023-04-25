@@ -23,6 +23,7 @@
                 <TableColumn fx:id="namecol" prefWidth="75.0" text="Name" />
                   <TableColumn fx:id="phonecol" prefWidth="75.0" text="Phone Number" />
                   <TableColumn fx:id="gendercall" prefWidth="75.0" text="Gender" />
+                  <TableColumn prefWidth="75.0" text="Email Id" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -34,23 +35,35 @@
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="600.0" styleClass="emp" stylesheets="@../css/styling.css" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="266.0" text="My Market Management">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/LOGO.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="266.0" text="My Market Management">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="bytme" mnemonicParsing="false" onMouseClicked="#gottodash" prefHeight="26.0" prefWidth="106.0" text="BYTE_ME">
+                  <Label text="Employee Details">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="72.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="bytme" mnemonicParsing="false" onMouseClicked="#gottodash" prefHeight="34.0" prefWidth="50.0">
                      <graphic>
-                        <ImageView fitHeight="26.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/DESIGN.png" />
                            </image>
@@ -58,22 +71,39 @@
                      </graphic>
                   </Button>
                   <HBox prefHeight="36.0" prefWidth="109.0" />
-                  <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/kisspng-computer-icons-web-search-engine-website-download-search-png-simple-5ab0b1e73838d8.9158675315215293192303.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
                   </ImageView>
                   <TextField fx:id="searchemp" prefHeight="32.0" prefWidth="194.0" promptText="Search Employee">
                      <HBox.margin>
-                        <Insets right="9.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="addbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addemployee" prefHeight="33.0" prefWidth="65.0" text="Add">
+                  <HBox layoutX="130.0" layoutY="10.0" prefHeight="34.0" prefWidth="11.0" />
+                  <Button fx:id="addbutton" layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#addemployee" prefHeight="25.0" prefWidth="40.0" text="Add">
                      <HBox.margin>
-                        <Insets left="9.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
+                  <HBox layoutX="472.0" layoutY="10.0" prefHeight="34.0" prefWidth="113.0" />
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/logout_icon-icons.com_51025.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>
