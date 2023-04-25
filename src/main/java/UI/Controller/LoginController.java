@@ -1,5 +1,6 @@
 package UI.Controller;
 
+import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -61,7 +62,7 @@ public class LoginController {
         }
     @FXML
     void forgotpassbutton(MouseEvent event) throws IOException {
-
+        JumpScene.changeScene(loginPane,"fxml/dashboard.fxml",event);
     }
 
     @FXML
