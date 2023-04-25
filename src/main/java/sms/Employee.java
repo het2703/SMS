@@ -98,7 +98,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, String hire_date, String DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
+    public static boolean createNewEmployee(int id, String fname, String lname, String email, long phone_number, Date hire_date, Date DOB, String gender, int salary) throws SQLException, ClassNotFoundException {
         String query = "\n" +
                 "INSERT INTO `byte_me`.`employee`\n" +
                 "(`EMPLOYEE_ID`,\n" +
