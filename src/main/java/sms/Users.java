@@ -22,7 +22,6 @@ public class Users {
     }
 
     public Users() {
-
     }
 
     public String getName() {
