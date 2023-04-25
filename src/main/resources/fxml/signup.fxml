@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="sign" stylesheets="/css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.SignupController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="sign" stylesheets="/css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.SignupController">
    <left>
       <VBox prefHeight="400.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
    </left>
@@ -22,7 +22,7 @@
       <VBox prefHeight="400.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <VBox prefHeight="362.0" prefWidth="308.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="362.0" prefWidth="308.0" BorderPane.alignment="CENTER">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -32,7 +32,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="302.0" prefWidth="276.0" style="-fx-background-radius: 10px;" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="112.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="112.0" fitWidth="182.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -70,6 +70,10 @@
                   </TextField>
                   <Region layoutX="10.0" layoutY="119.0" prefHeight="13.0" prefWidth="276.0" />
                   <TextField fx:id="newname" alignment="CENTER" layoutX="10.0" layoutY="176.0" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="Name" style="-fx-background-radius: 10;" />
+                  <Region layoutX="10.0" layoutY="636.0" prefHeight="11.0" prefWidth="276.0" />
+                  <TextField fx:id="newdate" alignment="CENTER" layoutX="608.0" layoutY="588.0" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="Date" style="-fx-background-radius: 10;" />
+                  <Region layoutX="10.0" layoutY="657.0" prefHeight="11.0" prefWidth="276.0" />
+                  <TextField fx:id="newphonenumber" alignment="CENTER" layoutX="608.0" layoutY="609.0" maxWidth="400.0" prefHeight="32.0" prefWidth="276.0" promptText="Phone Number" style="-fx-background-radius: 10;" />
                   <Region prefHeight="11.0" prefWidth="276.0" />
                   <PasswordField fx:id="newpassword" alignment="CENTER" layoutX="10.0" layoutY="240.0" maxWidth="400.0" prefHeight="31.0" prefWidth="276.0" promptText="Password" style="-fx-background-radius: 10;" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="15.0" prefWidth="276.0" style="-fx-background-radius: 10;" />
