@@ -13,7 +13,40 @@
 .emp{
 -fx-background-image: url("/img/cback.jpg");
 }
+
+
+
+.textfield{
+   -fx-background-color:linear-gradient(to bottom,#efefef, #eee);
+   -fx-background-radius:8px;
+   -fx-border-color:#000;
+   -fx-border-width:0px 0px .8px 0px;
+   -fx-font-family:"tahoma";
+   -fx-font-size:13px;
+
+   }
+
 .textfield:focused{
    -fx-background-color:#fff;
    -fx-border-width: 0px 0px 1.8px 0px;
 }
+
+.login{
+ -fx-background-color:linear-gradient(to bottom, #086ed4,#213c57};
+-fx-background-radius:8px;
+-fx-cursor:hand;
+-fx-text-fill:#fff;
+-fx-font-family:"Arial";
+-fx-font-size:14px;
+
+}
+
+.login:hover{
+-fx-background-color:linear-gradient(to bottom, #086ed4,#295986  }
+
+.close{
+-fx-background-color: transparent;
+-fx-cursor:hand;}
+
+.close:hover{
+-fx-background-color:#dd2f4f;}

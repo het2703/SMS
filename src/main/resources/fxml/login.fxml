@@ -41,7 +41,7 @@
                   <Region prefHeight="12.0" prefWidth="276.0" />
                   <HBox alignment="CENTER" prefHeight="36.0" prefWidth="310.0">
                      <children>
-                        <Button fx:id="loginbuttons1" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #086ed4;" text="Login" textFill="#ececec">
+                        <Button fx:id="loginbuttons1" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #086ed4;" stylesheets="@../css/styling.css" text="Login" textFill="#ececec">
                            <HBox.margin>
                               <Insets right="2.0" />
                            </HBox.margin>
@@ -70,7 +70,7 @@
                   <Label alignment="CENTER" prefHeight="18.0" prefWidth="41.0" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="3.0" prefWidth="310.0" style="-fx-background-radius: 10;" />
                   <Region layoutX="10.0" layoutY="168.0" prefHeight="9.0" prefWidth="310.0" />
-                  <Button fx:id="loginbuttons2" mnemonicParsing="false" onMouseClicked="#loginnow" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" text="Login " textFill="WHITE">
+                  <Button fx:id="loginbuttons2" mnemonicParsing="false" onMouseClicked="#loginnow" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #086ed4; -fx-background-radius: 15;" stylesheets="@../css/styling.css" text="Login " textFill="WHITE">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
