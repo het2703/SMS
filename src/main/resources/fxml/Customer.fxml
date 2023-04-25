@@ -23,11 +23,14 @@
                 <TableColumn fx:id="namecolumn" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="idcolumn" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="phonenumbercolumn" prefWidth="75.0" text="Phone Number" />
-                  <TableColumn fx:id="gendercolumn" prefWidth="75.0" text="Gender" />
+                  <TableColumn fx:id="gendercolumn" prefWidth="75.0" text="Expenditure" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
             </TableView>
          </children>
       </VBox>
