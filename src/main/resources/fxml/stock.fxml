@@ -100,12 +100,12 @@
                 <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="403.59999542236324" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TableView editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="394.0" prefWidth="700.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <TableView fx:id="product_view" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="394.0" prefWidth="700.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn prefWidth="144.79998779296875" text="Product Id" />
-                      <TableColumn prefWidth="194.39999389648438" text="product  name" />
-                      <TableColumn prefWidth="175.2000732421875" text="price" />
-                        <TableColumn prefWidth="187.199951171875" text="stock" />
+                        <TableColumn fx:id="product_id" prefWidth="144.79998779296875" text="Product Id" />
+                      <TableColumn fx:id="p_name" prefWidth="194.39999389648438" text="product  name" />
+                      <TableColumn fx:id="price" prefWidth="175.2000732421875" text="price" />
+                        <TableColumn fx:id="stock" prefWidth="187.199951171875" text="stock" />
                     </columns>
                   </TableView>
                   <GridPane prefHeight="83.0" prefWidth="698.0">

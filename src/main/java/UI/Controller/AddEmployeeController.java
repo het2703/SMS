@@ -1,23 +1,22 @@
 package UI.Controller;
 
+import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Employee;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 public class AddEmployeeController {
+
+    @FXML
+    private BorderPane nePane;
     @FXML
     private Button addbutton1;
 
@@ -55,12 +54,7 @@ public class AddEmployeeController {
     void addnow(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
       boolean b= checkcred();
       if(b){
-          FXMLLoader loader = new FXMLLoader();
-          loader.setLocation(getClass().getClassLoader().getResource("fxml/Employee.fxml"));
-          Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-          BorderPane pane = loader.load();
-          stage.getScene().setRoot(pane);
-          stage.show();
+          JumpScene.changeScene(nePane,"fxml/Employee.fxml",event);
       }
       else{
          warninglabel.setText("Invalid Credentials !");
@@ -69,17 +63,12 @@ public class AddEmployeeController {
 
     @FXML
     void cancelnow(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/Employee.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(nePane,"fxml/Employee.fxml",event);
     }
     public boolean checkcred() throws SQLException, ClassNotFoundException {
         int empid1= Integer.parseInt(empid.getText());
-        String dob1 = dob.getText();
-        String hiredate1 = hiredate.getText();
+        Date dob1 = Date.valueOf(dob.getText());
+        Date hiredate1 = Date.valueOf(hiredate.getText());
         String email1=email.getText();
         String firstn=firstname.getText();
         String gender1=gender.getText();
@@ -88,5 +77,4 @@ public class AddEmployeeController {
         int salary1=Integer.parseInt(salary.getText());
         return Employee.createNewEmployee(empid1, firstn, lastn, email1,phonenumber1, hiredate1, dob1, gender1, salary1);
     }
-
 }

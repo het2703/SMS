@@ -28,7 +28,7 @@ public class ProductDAO {
         return pro;
     }
 
-    private static void dataToArray(ResultSet data, Products[] pro) throws SQLException {
+    public static void dataToArray(ResultSet data, Products[] pro) throws SQLException {
         int counter = 0;
         while (data.next()){
             int p_id = data.getInt("PRODUCT_ID");

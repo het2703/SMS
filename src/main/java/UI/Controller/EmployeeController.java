@@ -33,7 +33,6 @@ public class EmployeeController implements Initializable {
     @FXML
     private Button addbutton;
 
-
     @FXML
     private TableView<Employee> tableview;
     @FXML
@@ -48,6 +47,8 @@ public class EmployeeController implements Initializable {
     @FXML
     private TableColumn<Employee, Integer> phonecol;
 
+    @FXML
+    private TableColumn<Employee,String> emailcol;
     @FXML
     private TextField searchemp;
 
@@ -78,6 +79,7 @@ public class EmployeeController implements Initializable {
         idcol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("employee_id"));
         phonecol.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("phone_number"));
         gendercall.setCellValueFactory(new PropertyValueFactory<Employee, String>("gender"));
+        emailcol.setCellValueFactory(new PropertyValueFactory<Employee,String>("email"));
 
         try {
             String query = "select * from employee";
