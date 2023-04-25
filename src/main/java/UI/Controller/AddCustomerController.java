@@ -1,5 +1,6 @@
 package UI.Controller;
 
+import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,9 +16,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class AddCustomerController {
+
+    @FXML
+    BorderPane ncPane;
     @FXML
     private Button addconsumerbutton;
-
     @FXML
     private Button back;
     @FXML
@@ -45,30 +48,19 @@ public class AddCustomerController {
     private TextField phonenumber;
 
     @FXML
-    void addconsumer(MouseEvent event) throws IOException, SQLException, ClassNotFoundException {
+    void addcustomer(MouseEvent event) throws IOException, SQLException, ClassNotFoundException {
         boolean b = checkcustomer();
         if (b) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/Customer.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
+            JumpScene.changeScene(ncPane,"fxml/Customer.fxml",event);
         }
         else {
             customerlabel.setText("Invalid Credentials !");
         }
     }
 
-
     @FXML
     void canceltocustomer(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/Customer.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(ncPane,"fxml/Customer.fxml",event);
     }
     public boolean checkcustomer() throws SQLException, ClassNotFoundException {
         String lname1 = lname.getText();
@@ -76,7 +68,7 @@ public class AddCustomerController {
         int id1 = Integer.parseInt(customerid.getText());
         long contact=Long.parseLong(phonenumber.getText());
         int exp=Integer.parseInt(expenditure.getText());
-        return Customer. createNewCustomer( id1,  fname1,  lname1,contact, exp);
+        return Customer.createNewCustomer(id1, fname1, lname1, contact, exp);
     }
 }
 

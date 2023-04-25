@@ -2,6 +2,7 @@ package UI.Controller;
 
 import Database.DAO.EmployeeDAO;
 import Database.DB;
+import UI.Elements.JumpScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -33,6 +34,8 @@ public class EmployeeController implements Initializable {
     @FXML
     private Button addbutton;
 
+    @FXML
+    private BorderPane empPane;
 
     @FXML
     private TableView<Employee> tableview;
@@ -53,22 +56,12 @@ public class EmployeeController implements Initializable {
 
     @FXML
     void gottodash(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-        BorderPane pane = loader.load();
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(empPane,"fxml/dashboard.fxml",event);
 }
 
     @FXML
     void addemployee(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/addemployee.fxml"));
-        BorderPane pane = loader.load();
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(empPane,"fxml/addemployee.fxml",event);
     }
     private final ObservableList<Employee> datalist = FXCollections.observableArrayList();
     @Override

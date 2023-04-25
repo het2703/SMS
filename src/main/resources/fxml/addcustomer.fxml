@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="649.0" styleClass="emp" stylesheets="@../css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddCustomerController">
+<BorderPane fx:id="ncPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="649.0" styleClass="emp" stylesheets="@../css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AddCustomerController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -101,7 +101,7 @@
                               <Cursor fx:constant="V_RESIZE" />
                            </cursor>
                         </Region>
-                        <Button fx:id="addconsumerbutton" mnemonicParsing="false" onMouseClicked="#addconsumer" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Add" textFill="WHITE" />
+                        <Button fx:id="addconsumerbutton" mnemonicParsing="false" onMouseClicked="#addcustomer" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Add" textFill="WHITE" />
                         <Region layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="49.0" />
                         <Button fx:id="cancelbutton" layoutX="102.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#canceltocustomer" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #13336e; -fx-background-radius: 10;" text="Cancel" textFill="WHITE" />
                      </children>
