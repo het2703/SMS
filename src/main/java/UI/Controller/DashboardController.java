@@ -33,7 +33,7 @@ public class DashboardController {
 
     @FXML
     void openprofile(MouseEvent event) throws IOException {
-        JumpScene.changeScene(dashPane,"fxml/profile1.fxml",event);
+        JumpScene.changeScene(dashPane,"fxml/PROFILE.fxml",event);
     }
     @FXML
     void employeeinfo(MouseEvent event) throws IOException {
@@ -46,6 +46,6 @@ public class DashboardController {
     }
     @FXML
     void stockdetails(MouseEvent event) throws IOException {
-        JumpScene.changeScene(dashPane,"fxml/Stock1.fxml",event);
+        JumpScene.changeScene(dashPane,"fxml/stock.fxml",event);
     }
 }

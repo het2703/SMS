@@ -2,14 +2,14 @@ package UI.Controller;
 
 import Database.DAO.EmployeeDAO;
 import Database.DB;
+import UI.Elements.ConfirmBox;
+import UI.Elements.JumpScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Employee;
 
 import java.io.IOException;
@@ -30,11 +29,12 @@ import static Database.DB.size;
 
 public class EmployeeController implements Initializable {
 
+    public Button bytme;
+    public Button lout;
     @FXML
     private BorderPane empPane;
     @FXML
     private Button addbutton;
-
     @FXML
     private TableView<Employee> tableview;
     @FXML
@@ -56,23 +56,20 @@ public class EmployeeController implements Initializable {
 
 
     @FXML
+    void logoutnow(MouseEvent event) throws IOException {
+        boolean b = ConfirmBox.displayAlert("Logout?","Confirm logout");
+        if(b){
+            JumpScene.changeScene(empPane,"fxml/login.fxml",event);
+        }
+    }
+    @FXML
     void gottodash(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-        BorderPane pane = loader.load();
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(empPane,"fxml/dashboard.fxml",event);
 }
 
     @FXML
     void addemployee(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/addemployee.fxml"));
-        BorderPane pane = loader.load();
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(empPane,"fxml/addemployee.fxml",event);
     }
     private final ObservableList<Employee> datalist = FXCollections.observableArrayList();
     @Override
@@ -120,10 +117,4 @@ public class EmployeeController implements Initializable {
         tableview.setItems(sorteddata);
 
     }
-    @FXML
-    void remove(){
-        int select = tableview.getSelectionModel().getSelectedIndex();
-        tableview.getItems().remove(select);
-        }
-
 }

@@ -3,14 +3,13 @@ package UI.Controller;
 import Database.DAO.CustomerDAO;
 import Database.DB;
 import UI.Elements.ConfirmBox;
+import UI.Elements.JumpScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Customer;
 
 import java.io.IOException;
@@ -35,68 +33,46 @@ public class CustomerController implements Initializable {
     private BorderPane custPane;
     @FXML
     private Button addcustomerbutton;
-
     @FXML
-    private Button back;
-
+    private Button logoutbutton;
     @FXML
     private Button dashboard1;
     @FXML
     private TableColumn<Customer, Integer> idcolumn;
-
     @FXML
     private TableColumn<Customer, String> namecolumn;
-
     @FXML
     private TableColumn<Customer, Integer> phonenumbercolumn;
-
     @FXML
     private TableColumn<Customer,Integer> expcolumn;
     @FXML
     private TextField searchtext;
-
     @FXML
     private TableView<Customer> customerview;
 
-
     @FXML
     void addcustomer(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/addcustomer.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(custPane,"fxml/addcustomer.fxml",event);
     }
 
     @FXML
     void logoutnow(MouseEvent event) throws IOException {
         boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout");
         if (b) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
+            JumpScene.changeScene(custPane,"fxml/login.fxml",event);
         }
     }
 
     @FXML
     void opendashboard(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(custPane,"fxml/dashboard.fxml",event);
     }
 
     private final ObservableList<Customer> datalist = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        namecolumn.setCellValueFactory(new PropertyValueFactory<Customer, String>("first_name"));
+        namecolumn.setCellValueFactory(new PropertyValueFactory<Customer, String>("fname"));
         idcolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("customer_id"));
         phonenumbercolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("phone_number"));
         expcolumn.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("expenditure"));
@@ -107,10 +83,10 @@ public class CustomerController implements Initializable {
             ResultSet data = DB.dbExecuteQuery(query);
             assert data != null;
             int size = size(data);
-            Customer[] cus = new Customer[size];
-            CustomerDAO.dataToArray(data,cus);
-            for (int i = 0; i < cus.length ; i++) {
-                datalist.add(i,cus[i]);
+            Customer[] cust = new Customer[size];
+            CustomerDAO.dataToArray(data,cust);
+            for (int i = 0; i < cust.length ; i++) {
+                datalist.add(i,cust[i]);
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
@@ -135,6 +111,5 @@ public class CustomerController implements Initializable {
         SortedList<Customer> sorteddata = new SortedList<>(filtereddata);
         sorteddata.comparatorProperty().bind(customerview.comparatorProperty());
         customerview.setItems(sorteddata);
-
     }
 }

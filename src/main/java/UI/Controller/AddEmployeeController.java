@@ -75,6 +75,6 @@ public class AddEmployeeController {
         String lastn=lastname.getText();
         long phonenumber1 = Long.parseLong(phonenumber.getText());
         int salary1=Integer.parseInt(salary.getText());
-        return Employee.createNewEmployee(empid1, firstn, lastn, email1,phonenumber1, hiredate1, dob1, gender1, salary1);
+        return Employee.createNewEmployee(empid1, firstn, lastn, email1, phonenumber1, hiredate1, dob1, gender1, salary1);
     }
 }

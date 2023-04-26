@@ -91,9 +91,9 @@
                      </HBox.margin>
                   </Button>
                   <HBox layoutX="472.0" layoutY="10.0" prefHeight="34.0" prefWidth="113.0" />
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="lout" mnemonicParsing="false" onMouseClicked="#logoutnow">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="35.0" onMouseClicked="#logoutnow" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/logout_icon-icons.com_51025.png" />
                            </image>

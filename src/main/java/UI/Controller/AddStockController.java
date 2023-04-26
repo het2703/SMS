@@ -47,7 +47,7 @@ public class AddStockController {
                 boolean b=addstock();
                 if(b){
                         FXMLLoader loader = new FXMLLoader();
-                        loader.setLocation(getClass().getClassLoader().getResource("fxml/Stock1.fxml"));
+                        loader.setLocation(getClass().getClassLoader().getResource("fxml/stock.fxml"));
                         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
                         BorderPane pane = loader.load();
                         stage.getScene().setRoot(pane);
@@ -63,7 +63,7 @@ public class AddStockController {
 
         @FXML
         void cancelnow(MouseEvent event) throws IOException {
-                JumpScene.changeScene(add_stock_product,"fxml/Stock1.fxml",event);
+                JumpScene.changeScene(add_stock_product,"fxml/stock.fxml",event);
         }
         public boolean addstock() throws SQLException, ClassNotFoundException {
                 int id=Integer.parseInt(add_product_id.getText());

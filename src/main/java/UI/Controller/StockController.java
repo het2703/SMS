@@ -1,6 +1,5 @@
 package UI.Controller;
 
-import Database.DAO.EmployeeDAO;
 import Database.DAO.ProductDAO;
 import Database.DB;
 import UI.Elements.ConfirmBox;
@@ -10,18 +9,13 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-import sms.Employee;
 import sms.Products;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -33,10 +27,10 @@ import static Database.DB.size;
 public class StockController implements Initializable {
 
     @FXML
-    private ImageView s_id;
-    @FXML BorderPane stock_details_borderpane;
+    BorderPane stock_details_borderpane;
+
     @FXML
-    private Button bytme1;
+    private Button bytme;
 
     @FXML
     private Button logout;
@@ -62,12 +56,7 @@ public class StockController implements Initializable {
     void logoutnow(MouseEvent event) throws IOException {
         boolean b = ConfirmBox.displayAlert("Logout?","Confirm logout");
         if(b){
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
-            Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
+            JumpScene.changeScene(stock_details_borderpane,"fxml/login.fxml",event);
         }
     }
 

@@ -2,8 +2,10 @@ package sms;
 
 import Database.DAO.Login;
 import Database.DB;
+
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Date;
+import java.sql.Date;
 
 public class Users {
     protected String name;
@@ -92,5 +94,26 @@ public class Users {
                 "\""+date+"\",\n" +
                 "\""+password+"\");";
         return DB.dbExecuteUpdate(query);
+    }
+
+    public static boolean editAccountDetails(Users user) throws SQLException, ClassNotFoundException {
+        String query = "UPDATE `byte_me`.`users` SET `name` = ?, `number` = ?, `DOB` = ?, `department` = ? WHERE (`id` = ?)";
+        PreparedStatement ps = DB.getstmt(query);
+        assert ps !=null;
+        ps.setString(1,user.getName());
+        ps.setLong(2,user.getContact());
+        ps.setDate(3,user.getDate_of_birth());
+        ps.setString(4,user.getDepartment());
+        ps.setInt(5,user.getStaff_id());
+        return DB.dbExecutePS(ps);
+    }
+
+    public static boolean changePassword(int id, String password) throws SQLException {
+        String query = "UPDATE `byte_me`.`users` SET `password` = ? WHERE (`id` = ?)";
+        PreparedStatement ps = DB.getstmt(query);
+        assert ps != null;
+        ps.setString(1,password);
+        ps.setInt(2,id);
+        return DB.dbExecutePS(ps);
     }
 }

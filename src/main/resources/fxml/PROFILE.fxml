@@ -2,7 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,13 +16,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.ProfileController">
+<BorderPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="home" stylesheets="styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.ProfileController">
    <left>
       <VBox prefHeight="400.0" prefWidth="155.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="72.0" prefWidth="156.0">
                <children>
-                  <Button fx:id="byteme1" mnemonicParsing="false" onMouseClicked="#opendashboard_fromprofile" prefHeight="78.0" prefWidth="155.0">
+                  <Button fx:id="byteme" mnemonicParsing="false" onMouseClicked="#backtodash" prefHeight="78.0" prefWidth="155.0">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -45,17 +47,9 @@
                <padding>
                   <Insets right="30.0" />
                </padding></Button>
-            <Button layoutX="10.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#editprofilepage" prefHeight="49.0" prefWidth="190.0" text="EDIT PROFILE">
-               <graphic>
-                  <ImageView fitHeight="43.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/p1.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#changepasspage" prefHeight="49.0" prefWidth="190.0" text="CHANGE PASSWORD" />
+            <Button fx:id="changepass" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#changepasspage" prefHeight="49.0" prefWidth="190.0" text="CHANGE PASSWORD" />
             <Region prefHeight="329.0" prefWidth="155.0" VBox.vgrow="ALWAYS" />
-            <Button fx:id="logoutfromprofile" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logout_from_profile" prefHeight="56.0" prefWidth="155.0" text="LOGOUT ">
+            <Button fx:id="logoutfromprofile" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#logoutnow" prefHeight="56.0" prefWidth="155.0" text="LOGOUT ">
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -69,27 +63,33 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="159.0" prefWidth="745.0" styleClass="home" />
-            <HBox prefHeight="566.0" prefWidth="745.0" styleClass="home">
+            <HBox prefHeight="159.0" prefWidth="745.0" styleClass="home" VBox.vgrow="ALWAYS" />
+            <HBox prefHeight="566.0" prefWidth="745.0" styleClass="home" VBox.vgrow="ALWAYS">
                <children>
                   <VBox prefHeight="483.0" prefWidth="221.0">
                      <children>
-                        <ImageView fitHeight="144.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="144.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/mm.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="30.0" />
+                              <Insets left="35.0" top="10.0" />
                            </VBox.margin></ImageView>
-                        <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="154.0" prefHeight="31.0" prefWidth="174.0" text="STATUS" />
+                        <Label alignment="TOP_CENTER" prefHeight="31.0" prefWidth="174.0" text="USER">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="8.0" />
+                           </padding></Label>
                      </children>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="483.0" prefWidth="439.0">
                      <children>
-                        <GridPane alignment="CENTER" prefHeight="414.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
+                        <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="414.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.99998474121094" minWidth="10.0" prefWidth="214.4000244140625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.5999755859375" minWidth="10.0" prefWidth="209.5999755859375" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -99,16 +99,16 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label prefHeight="18.0" prefWidth="67.0" text="NAME" />
-                              <Label prefHeight="18.0" prefWidth="106.0" text="DEPARTMENT" GridPane.rowIndex="1" />
-                              <Label prefHeight="18.0" prefWidth="74.0" text="ID" GridPane.rowIndex="2" />
-                              <Label layoutX="10.0" layoutY="77.0" prefHeight="18.0" prefWidth="129.0" text="DATE OF BIRTH" GridPane.rowIndex="3" />
-                              <Label layoutX="10.0" layoutY="107.0" prefHeight="18.0" prefWidth="102.0" text="PHONE NUMBER" GridPane.rowIndex="4" />
-                              <Label fx:id="namelabel" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" />
-                              <Label fx:id="departmentlabel" layoutX="227.0" layoutY="21.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="idlabel" layoutX="227.0" layoutY="61.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label fx:id="doblabel" layoutX="227.0" layoutY="102.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="phonenumberlabel" layoutX="227.0" layoutY="142.0" prefHeight="18.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" prefHeight="33.0" prefWidth="130.0" text="NAME" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" prefHeight="39.0" prefWidth="164.0" text="DEPARTMENT" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="110.0" text="ID" />
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="45.0" prefWidth="166.0" text="DATE OF BIRTH" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="107.0" prefHeight="34.0" prefWidth="172.0" text="PHONE NUMBER" GridPane.rowIndex="4" />
+                              <TextField fx:id="name" alignment="CENTER" prefHeight="39.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="id" alignment="CENTER" layoutX="225.0" layoutY="135.0" prefHeight="39.0" prefWidth="210.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="dob" alignment="CENTER" layoutX="225.0" layoutY="135.0" prefHeight="39.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="contact" alignment="CENTER" layoutX="225.0" layoutY="329.0" prefHeight="39.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="dep" prefHeight="40.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                            <VBox.margin>
                               <Insets left="15.0" />
@@ -121,7 +121,10 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="124.0" prefWidth="745.0" styleClass="home" />
+            <HBox prefHeight="124.0" prefWidth="745.0" styleClass="home" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="savebutton" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes" />
+               </children></HBox>
          </children>
       </VBox>
    </center>

@@ -33,6 +33,26 @@ public class DB {
         return false;
     }
 
+    public static PreparedStatement getstmt(String q) {
+        Connection conn = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String connString = "jdbc:mysql://127.0.0.1:3306/byte_me";
+            conn = DriverManager.getConnection(connString, "root", "1234");
+            return conn.prepareStatement(q, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean dbExecutePS(PreparedStatement ps) throws SQLException {
+        ps.execute();
+        ps.close();
+        return true;
+    }
+
     public static int size(ResultSet data) throws SQLException{
         int size = 0;
         if (data !=null){

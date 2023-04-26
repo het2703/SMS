@@ -29,13 +29,12 @@ public class CustomerDAO {
     public static void dataToArray(ResultSet data, Customer[] cust) throws SQLException {
         int counter = 0;
         while (data.next()){
-            long c_id = data.getLong("CUSTOMER_ID");
+            int c_id = data.getInt("CUSTOMER_ID");
             String c_fname = data.getString("FIRST_NAME");
             String c_lname = data.getString("LAST_NAME");
             long contact = data.getLong("PHONE_NUMBER");
             int exp = data.getInt("EXPENDITURE");
-            cust[counter] = new Customer(c_id,c_fname,c_lname,contact,exp);
-            counter++;
+            cust[counter++] = new Customer(c_id,c_fname,c_lname,contact,exp);
         }
     }
 }

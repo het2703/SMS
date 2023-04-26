@@ -21,7 +21,6 @@ public class SignupController {
     private BorderPane signupPane;
     @FXML
     private Label signuplabel;
-
     @FXML
     private TextField newname;
     @FXML

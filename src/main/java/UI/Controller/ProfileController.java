@@ -1,155 +1,85 @@
 package UI.Controller;
 
-import Database.DAO.ProfileDAO;
-import UI.Elements.ConfirmBox;
-
+import Profile.CurrentUserInfo;
+import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-
-import javafx.scene.Node;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Users;
 
 import java.io.IOException;
-
+import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-
-public class ProfileController {
-    @FXML
-    private Button byteme1;
+public class ProfileController implements Initializable {
 
     @FXML
-    private Button editprofile4;
-
-
+    private TextField name;
     @FXML
-    private Button logoutfromprofile;
-
-
-
-
-
+    private ChoiceBox<String> dep;
     @FXML
-    void logout_from_profile(MouseEvent event) {
-
-    }
-
-
-
-
+    private TextField id;
+    @FXML
+    private TextField dob;
+    @FXML
+    private TextField contact;
+    @FXML
+    private BorderPane profilePane;
+    @FXML
+    private Button byteme;
     @FXML
     private Button changepass;
     @FXML
-    private Button logoutfromeditpro;
-    @FXML
-    private Button editprofile;
-    @FXML
-    private Button changepassidinedit;
-
+    private Button logoutfromprofile;
 
     @FXML
-    private Button openpro;
-    @FXML
-    private Button opendit_pro;
-
-    @FXML
-    private Button openprofrompass;
-
-    @FXML
-    private Label departmentlabel;
-
-    @FXML
-    private Label doblabel;
-
-    @FXML
-    private Label idlabel;
-    @FXML
-    private Label namelabel;
-
-    @FXML
-    private Label phonenumberlabel;
-
-    int id1;
-
-    public ProfileController() throws SQLException, ClassNotFoundException {
-    }
-    @FXML
-    public void getid(int id) throws SQLException, ClassNotFoundException {
-        id1 = id;
-        view();
-
-    }
-
-    @FXML
-    void openprofilefrompro(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
-    }
-
-
-    @FXML
-    void opendashboard_fromprofile(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/dashboard.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+    void backtodash(MouseEvent event) throws IOException {
+        JumpScene.changeScene(profilePane,"fxml/dashboard.fxml",event);
     }
 
     @FXML
     void changepasspage(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE PASSWORD.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+        JumpScene.changeScene(profilePane,"fxml/PROFILE PASSWORD.fxml",event);
     }
 
     @FXML
-    void editprofilepage(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("fxml/PROFILE EDIT.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BorderPane pane = loader.load();
-        stage.getScene().setRoot(pane);
-        stage.show();
+    void logoutnow(MouseEvent event) throws IOException {
+        JumpScene.changeScene(profilePane,"fxml/login.fxml",event);
+    }
+
+    private void setDept(){
+        String[] dept= {"ADMIN","CASHIER"};
+        dep.getItems().addAll(dept);
+        dep.setValue(CurrentUserInfo.getUser().getDepartment());
     }
 
     @FXML
-    void logoutpop(MouseEvent event) throws IOException {
-        boolean b = ConfirmBox.displayAlert("Logout?", "Confirm logout ?");
-        if (b) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            BorderPane pane = loader.load();
-            stage.getScene().setRoot(pane);
-            stage.show();
-        }
+    void saveChanges(MouseEvent event) throws SQLException, ClassNotFoundException {
+        String fname = name.getText();
+        Date DOB= Date.valueOf(dob.getText());
+        Long phone = Long.valueOf(contact.getText());
+        Users user = new Users(CurrentUserInfo.getUser().getStaff_id(),fname,phone,DOB,CurrentUserInfo.getUser().getDepartment());
+        Users.editAccountDetails(user);
+        CurrentUserInfo.setUser(user);
     }
-@FXML
-    void view() throws SQLException, ClassNotFoundException {
-        Users u = ProfileDAO.showProfile(id1);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        name.setEditable(true);
+        id.setEditable(true);
+        dob.setEditable(true);
+        contact.setEditable(true);
 
-        idlabel.setText(String.valueOf(u.getStaff_id()));
-        departmentlabel.setText((u.getDepartment()));
-        doblabel.setText(String.valueOf(u.getDate_of_birth()));
-        namelabel.setText(u.getName());
-        phonenumberlabel.setText(String.valueOf(u.getContact()));
+        name.setText(CurrentUserInfo.getUser().getName());
+        id.setText(String.valueOf(CurrentUserInfo.getUser().getStaff_id()));
+        dob.setText(String.valueOf(CurrentUserInfo.getUser().getDate_of_birth()));
+        contact.setText(String.valueOf(CurrentUserInfo.getUser().getContact()));
+        setDept();
     }
+
 }
-
-
-
-

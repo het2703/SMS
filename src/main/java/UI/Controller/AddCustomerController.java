@@ -2,14 +2,11 @@ package UI.Controller;
 
 import UI.Elements.JumpScene;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sms.Customer;
 
 import java.io.IOException;
@@ -20,30 +17,19 @@ public class AddCustomerController {
     @FXML
     BorderPane ncPane;
     @FXML
-    private Button addconsumerbutton;
-    @FXML
-    private Button back;
+    private Button addcustomerbutton;
     @FXML
     private Label customerlabel;
     @FXML
     private Button cancelbutton;
-
-
     @FXML
     private TextField customerid;
-
     @FXML
     private TextField expenditure;
-
     @FXML
     private TextField fname;
-
     @FXML
     private TextField lname;
-
-    @FXML
-    private Button logout;
-
     @FXML
     private TextField phonenumber;
 

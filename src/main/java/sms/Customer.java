@@ -3,13 +3,13 @@ import Database.DB;
 import java.sql.SQLException;
 
 public class Customer {
-    private long customer_id;
+    private int customer_id;
     private String fname;
     private String lname;
     private long phone_number;
     private int expenditure;
 
-    public Customer(long customer_id, String fname, String lname, long phone_number, int expenditure) {
+    public Customer(int customer_id, String fname, String lname, long phone_number, int expenditure) {
         this.customer_id = customer_id;
         this.fname = fname;
         this.lname = lname;
@@ -17,17 +17,15 @@ public class Customer {
         this.expenditure = expenditure;
     }
 
-    public long getCustomer_id() {
+    public int getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(long customer_id) {
+    public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
 
-    public String getFname() {
-        return fname;
-    }
+    public String getFname() {return fname;}
 
     public void setFname(String fname) {
         this.fname = fname;
